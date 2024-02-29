@@ -14,6 +14,7 @@ import java.sql.Timestamp;
 public abstract class Person {
      private long id;
     private String fullname;
+    private String password;
     private Date dob;
     private RoleModel roleModel;
     private String email;
@@ -27,9 +28,10 @@ public abstract class Person {
     public Person() {
     }
 
-    public Person(long id, String fullname, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate) {
+    public Person(long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate) {
         this.id = id;
         this.fullname = fullname;
+        this.password = password;
         this.dob = dob;
         this.roleModel = roleModel;
         this.email = email;
@@ -41,7 +43,13 @@ public abstract class Person {
         this.createdDate = createdDate;
     }
 
-    
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
     public long getId() {
         return id;

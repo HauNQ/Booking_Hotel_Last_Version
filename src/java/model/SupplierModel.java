@@ -17,10 +17,11 @@ public class SupplierModel extends Person{
     public SupplierModel() {
     }
 
-    public SupplierModel( long id, String fullname, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate,HotelModel hotelModel) {
-        super(id, fullname, dob, roleModel, email, phone, status, address, modifiedBy, modifiedDate, createdDate);
+    public SupplierModel(HotelModel hotelModel, long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate) {
+        super(id, fullname, password, dob, roleModel, email, phone, status, address, modifiedBy, modifiedDate, createdDate);
         this.hotelModel = hotelModel;
     }
+
 
     public HotelModel getHotelModel() {
         return hotelModel;
@@ -35,5 +36,4 @@ public class SupplierModel extends Person{
         return super.toString()+":-- "+hotelModel.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
-  
 }

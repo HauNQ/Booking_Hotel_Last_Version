@@ -4,10 +4,26 @@
  */
 package model;
 
+import java.sql.Date;
+import java.sql.Timestamp;
+
 /**
  *a 
  * @author Nguyen Quang Hau
  */
 public class CustomerModel extends Person{
-   
+
+    public CustomerModel() {
+    }
+
+    public CustomerModel(long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate) {
+        super(id, fullname, password, dob, roleModel, email, phone, status, address, modifiedBy, modifiedDate, createdDate);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+    }
+     
+    
 }
