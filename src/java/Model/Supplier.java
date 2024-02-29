@@ -10,50 +10,53 @@ import java.util.Date;
  *
  * @author HI
  */
-public class Customer {
+public class Supplier {
     private long id;
-    private String fullname;
+    private String fullName;
     private Date dob;
     private String role;
     private String email;
     private String phone;
     private int status;
     private String address;
-    private int modifiedBy;
+    private long hotelId;
     private Date modifiedDate;
     private Date createdDate;
+
+    public Supplier() {
+    }
+
+    
+    public Supplier(long id, String fullName, Date dob, String role, String email, String phone, int status, String address, long hotelId, Date modifiedDate, Date createdDate) {
+        this.id = id;
+        this.fullName = fullName;
+        this.dob = dob;
+        this.role = role;
+        this.email = email;
+        this.phone = phone;
+        this.status = status;
+        this.address = address;
+        this.hotelId = hotelId;
+        this.modifiedDate = modifiedDate;
+        this.createdDate = createdDate;
+    }
+
+    public Supplier(String fullName, Date dob, String role, String email, String phone, int status, String address, long hotelId, Date modifiedDate, Date createdDate) {
+        this.fullName = fullName;
+        this.dob = dob;
+        this.role = role;
+        this.email = email;
+        this.phone = phone;
+        this.status = status;
+        this.address = address;
+        this.hotelId = hotelId;
+        this.modifiedDate = modifiedDate;
+        this.createdDate = createdDate;
+    }
+    
+    
     
     // Getters and setters
-
-    public Customer(long id, String fullname, Date dob, String role, String email, String phone, int status, String address, int modifiedBy, Date modifiedDate, Date createdDate) {
-        this.id = id;
-        this.fullname = fullname;
-        this.dob = dob;
-        this.role = role;
-        this.email = email;
-        this.phone = phone;
-        this.status = status;
-        this.address = address;
-        this.modifiedBy = modifiedBy;
-        this.modifiedDate = modifiedDate;
-        this.createdDate = createdDate;
-    }
-
-    public Customer() {
-    }
-
-    public Customer(String fullname, Date dob, String role, String email, String phone, int status, String address, int modifiedBy, Date modifiedDate, Date createdDate) {
-        this.fullname = fullname;
-        this.dob = dob;
-        this.role = role;
-        this.email = email;
-        this.phone = phone;
-        this.status = status;
-        this.address = address;
-        this.modifiedBy = modifiedBy;
-        this.modifiedDate = modifiedDate;
-        this.createdDate = createdDate;
-    }
 
     public long getId() {
         return id;
@@ -63,12 +66,12 @@ public class Customer {
         this.id = id;
     }
 
-    public String getFullname() {
-        return fullname;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setFullname(String fullname) {
-        this.fullname = fullname;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public Date getDob() {
@@ -119,12 +122,12 @@ public class Customer {
         this.address = address;
     }
 
-    public int getModifiedBy() {
-        return modifiedBy;
+    public long getHotelId() {
+        return hotelId;
     }
 
-    public void setModifiedBy(int modifiedBy) {
-        this.modifiedBy = modifiedBy;
+    public void setHotelId(long hotelId) {
+        this.hotelId = hotelId;
     }
 
     public Date getModifiedDate() {
@@ -142,11 +145,5 @@ public class Customer {
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
-
-    @Override
-    public String toString() {
-        return "Customer{" + "id=" + id + ", fullname=" + fullname + ", dob=" + dob + ", role=" + role + ", email=" + email + ", phone=" + phone + ", status=" + status + ", address=" + address + ", modifiedBy=" + modifiedBy + ", modifiedDate=" + modifiedDate + ", createdDate=" + createdDate + '}';
-    }
-    
     
 }

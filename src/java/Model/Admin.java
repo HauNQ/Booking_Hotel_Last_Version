@@ -10,8 +10,8 @@ import java.util.Date;
  *
  * @author HI
  */
-public class Customer {
-    private long id;
+public class Admin {
+    private int id;
     private String fullname;
     private Date dob;
     private String role;
@@ -22,10 +22,11 @@ public class Customer {
     private int modifiedBy;
     private Date modifiedDate;
     private Date createdDate;
-    
-    // Getters and setters
 
-    public Customer(long id, String fullname, Date dob, String role, String email, String phone, int status, String address, int modifiedBy, Date modifiedDate, Date createdDate) {
+    public Admin() {
+    }
+
+    public Admin(int id, String fullname, Date dob, String role, String email, String phone, int status, String address, int modifiedBy, Date modifiedDate, Date createdDate) {
         this.id = id;
         this.fullname = fullname;
         this.dob = dob;
@@ -39,10 +40,7 @@ public class Customer {
         this.createdDate = createdDate;
     }
 
-    public Customer() {
-    }
-
-    public Customer(String fullname, Date dob, String role, String email, String phone, int status, String address, int modifiedBy, Date modifiedDate, Date createdDate) {
+    public Admin(String fullname, Date dob, String role, String email, String phone, int status, String address, int modifiedBy, Date modifiedDate, Date createdDate) {
         this.fullname = fullname;
         this.dob = dob;
         this.role = role;
@@ -54,12 +52,15 @@ public class Customer {
         this.modifiedDate = modifiedDate;
         this.createdDate = createdDate;
     }
+    
+    
+    // Getters and setters
 
-    public long getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -142,11 +143,4 @@ public class Customer {
     public void setCreatedDate(Date createdDate) {
         this.createdDate = createdDate;
     }
-
-    @Override
-    public String toString() {
-        return "Customer{" + "id=" + id + ", fullname=" + fullname + ", dob=" + dob + ", role=" + role + ", email=" + email + ", phone=" + phone + ", status=" + status + ", address=" + address + ", modifiedBy=" + modifiedBy + ", modifiedDate=" + modifiedDate + ", createdDate=" + createdDate + '}';
-    }
-    
-    
 }
