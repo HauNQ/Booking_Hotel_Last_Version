@@ -13,7 +13,7 @@ public class InvoiceModel {
     private long id;
     private BookingModel bookingModel;
     private CustomerModel customerModel;
-    private java.math.BigDecimal money;
+    private java.math.BigDecimal roomCharge;
     private String roomService;
     private Timestamp paymentDate;
     private String paymentMode;
@@ -22,11 +22,11 @@ public class InvoiceModel {
     public InvoiceModel() {
     }
 
-    public InvoiceModel(long id, BookingModel bookingModel, CustomerModel customerModel, BigDecimal money, String roomService, Timestamp paymentDate, String paymentMode, String creditCardNo) {
+    public InvoiceModel(long id, BookingModel bookingModel, CustomerModel customerModel, BigDecimal roomCharge, String roomService, Timestamp paymentDate, String paymentMode, String creditCardNo) {
         this.id = id;
         this.bookingModel = bookingModel;
         this.customerModel = customerModel;
-        this.money = money;
+        this.roomCharge = roomCharge;
         this.roomService = roomService;
         this.paymentDate = paymentDate;
         this.paymentMode = paymentMode;
@@ -57,13 +57,15 @@ public class InvoiceModel {
         this.customerModel = customerModel;
     }
 
-    public BigDecimal getMoney() {
-        return money;
+    public BigDecimal getRoomCharge() {
+        return roomCharge;
     }
 
-    public void setMoney(BigDecimal money) {
-        this.money = money;
+    public void setRoomCharge(BigDecimal roomCharge) {
+        this.roomCharge = roomCharge;
     }
+
+    
 
     public String getRoomService() {
         return roomService;
@@ -99,6 +101,6 @@ public class InvoiceModel {
 
     @Override
     public String toString() {
-        return "Invoice{" + "id=" + id + ", bookingModel=" + bookingModel + ", customerModel=" + customerModel + ", money=" + money + ", roomService=" + roomService + ", paymentDate=" + paymentDate + ", paymentMode=" + paymentMode + ", creditCardNo=" + creditCardNo + '}';
+        return "Invoice{" + "id=" + id + ", bookingModel=" + bookingModel + ", customerModel=" + customerModel + ", money=" + roomCharge + ", roomService=" + roomService + ", paymentDate=" + paymentDate + ", paymentMode=" + paymentMode + ", creditCardNo=" + creditCardNo + '}';
     }
 }

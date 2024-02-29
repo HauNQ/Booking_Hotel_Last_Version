@@ -9,7 +9,7 @@ public class JDBCUtill {
     public static Connection getConnection() throws ClassNotFoundException {
         Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
         StringBuilder url = new StringBuilder("jdbc:sqlserver://localhost:1433;");
-        url.append("database= StudentCRUD;");
+        url.append("database= BookingHotel;");
         url.append("encrypt=false;");
         url.append("trustServerCertificate=false;");
         url.append("loginTimeout=30;");

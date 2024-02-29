@@ -5,6 +5,7 @@
 package dao.impli;
 
 import dao.GenericDAO;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 import mapping.IRowMapping;
@@ -162,7 +163,13 @@ public class AbstractModel implements GenericDAO {
                 statement.setBoolean(index, (Boolean) parameter);
             } else if (parameter instanceof Integer) {
                 statement.setInt(index, (int) parameter);
-            } else if (parameter == null) {
+            } else if (parameter instanceof BigDecimal) {
+                statement.setBigDecimal(index, (BigDecimal) parameter);
+            }else if (parameter instanceof Timestamp) {
+                statement.setTimestamp(index, (Timestamp) parameter);
+            }else if (parameter instanceof Short) {
+                statement.setShort(index, (short) parameter);
+            }else if (parameter == null) {
                 statement.setNull(index, Types.NULL);
             }
             index++;
