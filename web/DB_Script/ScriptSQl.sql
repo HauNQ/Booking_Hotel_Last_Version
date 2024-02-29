@@ -1,4 +1,63 @@
 
+create database BookingHotel
+go
+
+use BookingHotel
+go
+
+create table [Role]
+(code varchar(10),
+name varchar(20),
+PRIMARY KEY (code));
+go
+
+create table RoomType
+(roomTypeId bigint identity(1,1),
+roomType varchar(30),
+price money,
+roomDesc text,
+PRIMARY KEY (roomTypeId))
+go
+
+Create table Customer
+(id bigint identity(1,1),
+fullname varchar(100),
+dob Date,
+role varchar(10),
+email varchar(50),
+phone varchar(10),
+status smallInt,
+address varchar(100),
+modifiedBy int,
+modifiedDate datetime,
+createdDate datetime,
+PRIMARY KEY (ID),
+FOREIGN KEY (role) REFERENCES role(code));
+go
+
+create table Hotel
+(id bigint identity(1,1),
+name varchar(50),
+address varchar(100),
+postcode varchar(10),
+numRooms int,
+phone varchar(10),
+starRating float
+PRIMARY KEY (ID));
+go
+
+create table Room
+(roomNo bigint identity(1,1),
+hotelID bigint,
+roomTypeId bigint,
+occupancy int,
+priceIncludes Text,
+status smallint,
+PRIMARY KEY (roomNo),
+FOREIGN KEY (hotelID) REFERENCES hotel(id),
+FOREIGN KEY (roomTypeId) REFERENCES roomType(roomTypeId));
+go
+
 
 create table Supplier
 (id bigint identity(1,1),
@@ -14,19 +73,25 @@ modifiedDate datetime,
 createdDate datetime,
 PRIMARY KEY (ID),
 FOREIGN KEY (role) REFERENCES role(code),
-FOREIGN KEY (hotelId) REFERENCES hotel(id));
+FOREIGN KEY (hotelId) REFERENCES Hotel(id));
+go
 
-create table Hotel
-(id bigint identity(1,1),
-name varchar(50),
-address varchar(100),
-postcode varchar(10),
-numRooms int,
-phone varchar(10),
-starRating float
-PRIMARY KEY (ID));
-
-drop table Hotel
+CREATE TABLE [Admin] (
+    id INT IDENTITY(1,1),
+    fullname VARCHAR(100),
+    dob DATE,
+    [role] VARCHAR(10),
+    email VARCHAR(50),
+    phone VARCHAR(10),
+    status SMALLINT,
+    address VARCHAR(100),
+    modifiedBy INT,
+    modifiedDate DATETIME,
+    createdDate DATETIME,
+    PRIMARY KEY (ID),
+    FOREIGN KEY ([role]) REFERENCES [role](code)
+);
+go
 
 create table Booking 
 (id bigint identity(1,1),
@@ -44,60 +109,7 @@ PRIMARY KEY (ID),
 FOREIGN KEY (customerID) REFERENCES customer(id),
 FOREIGN KEY (roomNO) REFERENCES room(roomNo),
 FOREIGN KEY (hotelId) REFERENCES hotel(id));
-
-create table Room
-(roomNo bigInt,
-hotelID bigint,
-roomType varchar(30),
-occupancy int,
-priceIncludes money,
-status smallint,
-PRIMARY KEY (roomNo),
-FOREIGN KEY (hotelID) REFERENCES hotel(id),
-FOREIGN KEY (roomType) REFERENCES roomType(roomType));
-
-ALTER TABLE Room
-ADD PriceIncludes Text;
-
-ALTER TABLE Room
-ALTER COLUMN PriceIncludes TEXT;
-
-create table Roomtype
-(roomType varchar(30),
-price money,
-roomDesc text,
-PRIMARY KEY (roomtype))
-
-Create table Customer
-(id bigint identity(1,1),
-fullname varchar(100),
-dob Date,
-role varchar(10),
-email varchar(50),
-phone varchar(10),
-status smallInt,
-address varchar(100),
-modifiedBy int,
-modifiedDate datetime,
-createdDate datetime,
-PRIMARY KEY (ID),
-FOREIGN KEY (role) REFERENCES role(code));
-
-CREATE TABLE [Admin] (
-    id INT IDENTITY(1,1),
-    fullname VARCHAR(100),
-    dob DATE,
-    [role] VARCHAR(10),
-    email VARCHAR(50),
-    phone VARCHAR(10),
-    status SMALLINT,
-    address VARCHAR(100),
-    modifiedBy INT,
-    modifiedDate DATETIME,
-    createdDate DATETIME,
-    PRIMARY KEY (ID),
-    FOREIGN KEY ([role]) REFERENCES [role](code)
-);
+go
 
 
 create table Invoice
@@ -113,6 +125,10 @@ PRIMARY KEY (ID),
 FOREIGN KEY (customerID) REFERENCES customer(id),
 FOREIGN KEY (bookingID) REFERENCES Booking(id));
 
+go
+
+
+
 create table CancelBooking
 (id bigint identity(1,1),
 customerID bigint,
@@ -123,6 +139,7 @@ status smallint,
 PRIMARY KEY (ID),
 FOREIGN KEY (customerID) REFERENCES customer(id),
 FOREIGN KEY (bookingID) REFERENCES Booking(id));
+go
 
 create table manageFavRoom
 (id bigint identity(1,1),
@@ -131,6 +148,8 @@ customerId bigint,
 PRIMARY KEY (ID),
 FOREIGN KEY (customerID) REFERENCES customer(id),
 FOREIGN KEY (roomNO) REFERENCES room(roomNo));
+go
+
 
 create table Report
 (id bigint identity(1,1),
@@ -141,8 +160,8 @@ content text,
 PRIMARY KEY (ID),
 FOREIGN KEY (customerID) REFERENCES customer(id),
 FOREIGN KEY (roomNO) REFERENCES room(roomNo));
+go
 
-drop table Report
 
 create table feedback
 (id bigint identity(1,1),
@@ -151,11 +170,6 @@ roomNo bigint,
 createdDate datetime,
 content text,
 FOREIGN KEY (customerID) REFERENCES customer(id),
-FOREIGN KEY (roomNO) REFERENCES room(roomNo));
+FOREIGN KEY (roomNo) REFERENCES room(roomNo));
 
-create table [Role]
-(code varchar(10),
-name varchar(20),
-PRIMARY KEY (code));
 
-DROP TABLE Role
