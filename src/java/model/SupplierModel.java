@@ -17,10 +17,12 @@ public class SupplierModel extends Person{
     public SupplierModel() {
     }
 
-    public SupplierModel(HotelModel hotelModel, long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate) {
-        super(id, fullname, password, dob, roleModel, email, phone, status, address, modifiedBy, modifiedDate, createdDate);
+    public SupplierModel(HotelModel hotelModel, long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate, String avatar) {
+        super(id, fullname, password, dob, roleModel, email, phone, status, address, modifiedBy, modifiedDate, createdDate, avatar);
         this.hotelModel = hotelModel;
     }
+
+    
 
 
     public HotelModel getHotelModel() {

@@ -10,7 +10,7 @@ package model;
  */
 public class RoomModel {
     private long roomNo;
-    private HotelModel hotelModel;
+    private long hotelId;
     private RoomTypeModel roomTypeModel;
     private int occupancy;
     private String priceIncludes;
@@ -19,15 +19,16 @@ public class RoomModel {
     public RoomModel() {
     }
 
-    public RoomModel(long roomNo, HotelModel hotelModel, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status) {
+    public RoomModel(long roomNo, long hotelId, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status) {
         this.roomNo = roomNo;
-        this.hotelModel = hotelModel;
+        this.hotelId = hotelId;
         this.roomTypeModel = roomTypeModel;
         this.occupancy = occupancy;
         this.priceIncludes = priceIncludes;
         this.status = status;
     }
 
+    
     public long getRoomNo() {
         return roomNo;
     }
@@ -36,13 +37,15 @@ public class RoomModel {
         this.roomNo = roomNo;
     }
 
-    public HotelModel getHotelModel() {
-        return hotelModel;
+    public long getHotelId() {
+        return hotelId;
     }
 
-    public void setHotelModel(HotelModel hotelModel) {
-        this.hotelModel = hotelModel;
+    public void setHotelId(long hotelId) {
+        this.hotelId = hotelId;
     }
+
+    
 
     public RoomTypeModel getRoomTypeModel() {
         return roomTypeModel;
@@ -78,7 +81,7 @@ public class RoomModel {
 
     @Override
     public String toString() {
-        return "RoomModel{" + "roomNo=" + roomNo + ", hotelModel=" + hotelModel + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + '}';
+        return "RoomModel{" + "roomNo=" + roomNo + ", hotelId=" + hotelId + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + '}';
     }
     
     

@@ -4,6 +4,8 @@
  */
 package mapping.impli;
 
+import dao.IRoomDAO;
+import dao.impli.RoomDAO;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
@@ -16,7 +18,7 @@ import model.HotelModel;
  * @author Nguyen Quang Hau
  */
 public class HotelMapping implements IRowMapping<HotelModel>{
-
+    private IRoomDAO roomDAO = new RoomDAO();
     @Override
     public HotelModel mapRow(ResultSet rs) {
         HotelModel hotelModel = new HotelModel();
@@ -29,6 +31,7 @@ public class HotelMapping implements IRowMapping<HotelModel>{
             hotelModel.setNumRooms(rs.getInt("numRooms"));
             hotelModel.setPhone(rs.getString("phone"));
             hotelModel.setStarRating(rs.getDouble("starRating"));
+            hotelModel.setRooms(roomDAO.findByHotel(hotelModel.getId()));   
         } catch (SQLException ex) {
             Logger.getLogger(HotelMapping.class.getName()).log(Level.SEVERE, null, ex);
             hotelModel = null;

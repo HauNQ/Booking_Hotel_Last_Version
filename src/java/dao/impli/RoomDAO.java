@@ -22,4 +22,15 @@ public class RoomDAO extends AbstractModel implements IRoomDAO {
         return (list.isEmpty()) ? null : list.get(0);
     }
 
+    @Override
+    public List<RoomModel> findByHotel(long hotelId) {
+        String sql = "SELECT * FROM Room WHERE hotelID = ?";
+        return query(sql,new RoomMapping(),hotelId);
+    }
+    
+//    public static void main(String[] args) {
+//        RoomDAO roomDAo = new RoomDAO();
+//        System.out.println(roomDAo.findByHotel(1).toString());
+//    }
+
 }

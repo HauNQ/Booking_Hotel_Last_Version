@@ -24,11 +24,12 @@ public abstract class Person {
     private long modifiedBy;
     private Timestamp modifiedDate;
     private Timestamp createdDate;
-
+    private String avatar;
+    
     public Person() {
     }
 
-    public Person(long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate) {
+    public Person(long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate, String avatar) {
         this.id = id;
         this.fullname = fullname;
         this.password = password;
@@ -41,8 +42,19 @@ public abstract class Person {
         this.modifiedBy = modifiedBy;
         this.modifiedDate = modifiedDate;
         this.createdDate = createdDate;
+        this.avatar = avatar;
     }
 
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+   
+    
     public String getPassword() {
         return password;
     }

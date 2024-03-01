@@ -4,6 +4,7 @@
  */
 package dao;
 
+import java.util.List;
 import model.RoomModel;
 
 /**
@@ -12,4 +13,5 @@ import model.RoomModel;
  */
 public interface IRoomDAO {
     RoomModel findBy(long roomNo);
+    List<RoomModel> findByHotel(long hotelId);
 }

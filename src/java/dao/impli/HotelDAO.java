@@ -21,5 +21,10 @@ public class HotelDAO extends AbstractModel implements IHotelDAO{
         List<HotelModel> list = query(sql, new HotelMapping(), id);
         return (list.isEmpty())?null:list.get(0);
     }
+    
+//    public static void main(String[] args) {
+//        HotelDAO hotel = new HotelDAO();
+//        System.out.println(hotel.findBy(1));
+//    }
   
 }

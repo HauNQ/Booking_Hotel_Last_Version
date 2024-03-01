@@ -32,6 +32,7 @@ address varchar(100),
 modifiedBy bigint,
 modifiedDate datetime,
 createdDate datetime,
+avatar text,
 PRIMARY KEY (ID),
 FOREIGN KEY (role) REFERENCES role(code));
 go
@@ -43,7 +44,8 @@ address varchar(100),
 postcode varchar(10),
 numRooms int,
 phone varchar(10),
-starRating float
+starRating float,
+avatar text,
 PRIMARY KEY (ID));
 go
 
@@ -54,6 +56,7 @@ roomTypeId bigint,
 occupancy int,
 priceIncludes Text,
 status smallint,
+avatar text,
 PRIMARY KEY (roomNo),
 FOREIGN KEY (hotelID) REFERENCES hotel(id),
 FOREIGN KEY (roomTypeId) REFERENCES roomType(roomTypeId));
@@ -74,6 +77,7 @@ hotelId bigint,
 modifiedBy bigint,
 modifiedDate datetime,
 createdDate datetime,
+avatar text,
 PRIMARY KEY (ID),
 FOREIGN KEY (role) REFERENCES role(code),
 FOREIGN KEY (hotelId) REFERENCES Hotel(id));
@@ -92,6 +96,7 @@ CREATE TABLE [Admin] (
     modifiedBy bigint,
     modifiedDate DATETIME,
     createdDate DATETIME,
+    avatar text,
     PRIMARY KEY (ID),
     FOREIGN KEY ([role]) REFERENCES [role](code)
 );

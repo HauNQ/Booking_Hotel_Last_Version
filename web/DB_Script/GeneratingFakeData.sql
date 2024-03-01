@@ -18,45 +18,45 @@ go
 
 
 -- Thêm dữ liệu cho bảng Customer
-INSERT INTO Customer (fullname,password ,dob, role, email, phone, status, address, modifiedBy, modifiedDate, createdDate)
+INSERT INTO Customer (fullname,password ,dob, role, email, phone, status, address, modifiedBy, modifiedDate, createdDate,avatar)
 VALUES 
-('John Doe','123' ,'1990-05-15', 'Cust', 'john.doe@example.com', '1234567890', 1, '456 Pine St', NULL, Null, GETDATE()),
-('Jane Smith','123', '1985-08-20', 'Cust', 'jane.smith@example.com', '9876543210', 1, '789 Cedar St', NULL,Null, GETDATE()),
-('Alice Johnson','123', '1978-12-10', 'Cust', 'alice.johnson@example.com', '4567890123', 1, '321 Oak St', NULL, Null, GETDATE());
+('John Doe','123' ,'1990-05-15', 'Cust', 'john.doe@example.com', '1234567890', 1, '456 Pine St', NULL, Null, GETDATE(),null),
+('Jane Smith','123', '1985-08-20', 'Cust', 'jane.smith@example.com', '9876543210', 1, '789 Cedar St', NULL,Null, GETDATE(),null),
+('Alice Johnson','123', '1978-12-10', 'Cust', 'alice.johnson@example.com', '4567890123', 1, '321 Oak St', NULL, Null, GETDATE(),null);
 go
 
 -- Thêm dữ liệu cho bảng Hotel
-INSERT INTO Hotel (name, address, postcode, numRooms, phone, starRating)
+INSERT INTO Hotel (name, address, postcode, numRooms, phone, starRating,avatar)
 VALUES 
-('Hotel A', '123 Main St', 'ABC123', 50, '1234567890', 4.5),
-('Hotel B', '456 Oak St', 'DEF456', 75, '9876543210', 3.8),
-('Hotel C', '789 Elm St', 'GHI789', 100, '4567890123', 4.0);
+('Hotel A', '123 Main St', 'ABC123', 50, '1234567890', 4.5,null),
+('Hotel B', '456 Oak St', 'DEF456', 75, '9876543210', 3.8,null),
+('Hotel C', '789 Elm St', 'GHI789', 100, '4567890123', 4.0,null);
 go
 
 
 -- Thêm dữ liệu cho bảng Room
-INSERT INTO Room (hotelID, roomTypeId, occupancy, priceIncludes, status)
+INSERT INTO Room (hotelID, roomTypeId, occupancy, priceIncludes, status,avatar)
 VALUES 
-( 2, 1, 1, 'Breakfast', 1),
-( 1, 2, 2, 'Breakfast, Wi-Fi', 1),
-( 3, 3, 1, 'Breakfast, Parking', 1)
+( 2, 1, 1, 'Breakfast', 1,null),
+( 1, 2, 2, 'Breakfast, Wi-Fi', 1,null),
+( 3, 3, 1, 'Breakfast, Parking', 1,null)
 -- Tiếp tục thêm dữ liệu cho các phòng khác tương tự
 ;
 go
 
 -- Thêm dữ liệu cho bảng Supplier
-INSERT INTO Supplier (fullName,password,dob, role, email, phone, status, address, hotelId, modifiedBy, modifiedDate, createdDate)
+INSERT INTO Supplier (fullName,password,dob, role, email, phone, status, address, hotelId, modifiedBy, modifiedDate, createdDate,avatar)
 VALUES 
-('Supplier A','123','1980-03-25', 'Sup', 'supplierA@example.com', '1112223333', 1, '123 Elm St', 3, Null, Null, GETDATE()),
-('Supplier B','123', '1975-07-12', 'Sup', 'supplierB@example.com', '4445556666', 1, '456 Maple St', 1, Null, Null, GETDATE()),
-('Supplier C','123', '1992-10-18', 'Sup', 'supplierC@example.com', '7778889999', 1, '789 Birch St', 2, Null, Null, GETDATE());
+('Supplier A','123','1980-03-25', 'Sup', 'supplierA@example.com', '1112223333', 1, '123 Elm St', 3, Null, Null, GETDATE(),null),
+('Supplier B','123', '1975-07-12', 'Sup', 'supplierB@example.com', '4445556666', 1, '456 Maple St', 1, Null, Null, GETDATE(),null),
+('Supplier C','123', '1992-10-18', 'Sup', 'supplierC@example.com', '7778889999', 1, '789 Birch St', 2, Null, Null, GETDATE(),null);
 go
 
 -- Thêm dữ liệu cho bảng Admin
-INSERT INTO [Admin] (fullname,password, dob, [role], email, phone, status, address, modifiedBy, modifiedDate, createdDate)
+INSERT INTO [Admin] (fullname,password, dob, [role], email, phone, status, address, modifiedBy, modifiedDate, createdDate,avatar)
 VALUES 
-('Admin 1','123' ,'1990-01-15', 'Admin', 'admin1@example.com', '1234567890', 1, '123 Admin St', NULL, Null, GETDATE()),
-('Admin 2','123' , '1985-05-20', 'Admin', 'admin2@example.com', '9876543210', 1, '456 Admin St', NULL, Null, GETDATE())
+('Admin 1','123' ,'1990-01-15', 'Admin', 'admin1@example.com', '1234567890', 1, '123 Admin St', NULL, Null, GETDATE(),null),
+('Admin 2','123' , '1985-05-20', 'Admin', 'admin2@example.com', '9876543210', 1, '456 Admin St', NULL, Null, GETDATE(),null)
 ;
 
 -- Thêm dữ liệu cho bảng Booking

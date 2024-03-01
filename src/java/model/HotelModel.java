@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.util.List;
+
 /**
  *
  * @author Nguyen Quang Hau
@@ -16,11 +18,13 @@ public class HotelModel {
     private int numRooms;
     private String phone;
     private double starRating;
-
+    private List<RoomModel> rooms;
+    
+            
     public HotelModel() {
     }
 
-    public HotelModel(long id, String name, String address, String postcode, int numRooms, String phone, double starRating) {
+    public HotelModel(long id, String name, String address, String postcode, int numRooms, String phone, double starRating, List<RoomModel> rooms) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -28,7 +32,21 @@ public class HotelModel {
         this.numRooms = numRooms;
         this.phone = phone;
         this.starRating = starRating;
+        this.rooms = rooms;
     }
+    
+    
+    
+
+    public List<RoomModel> getRooms() {
+        return rooms;
+    }
+
+    public void setRooms(List<RoomModel> rooms) {
+        this.rooms = rooms;
+    }
+
+    
 
     public long getId() {
         return id;
@@ -88,8 +106,9 @@ public class HotelModel {
 
     @Override
     public String toString() {
-        return "HotelModel{" + "id=" + id + ", name=" + name + ", address=" + address + ", postcode=" + postcode + ", numRooms=" + numRooms + ", phone=" + phone + ", starRating=" + starRating + '}';
+        return "HotelModel{" + "id=" + id + ", name=" + name + ", address=" + address + ", postcode=" + postcode + ", numRooms=" + numRooms + ", phone=" + phone + ", starRating=" + starRating + ", rooms=" + rooms + '}';
     }
+
     
     
 }
