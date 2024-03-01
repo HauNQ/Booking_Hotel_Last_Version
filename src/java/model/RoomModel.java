@@ -15,18 +15,32 @@ public class RoomModel {
     private int occupancy;
     private String priceIncludes;
     private short status;
-
+    private String avatar;
+    
     public RoomModel() {
     }
 
-    public RoomModel(long roomNo, long hotelId, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status) {
+    public RoomModel(long roomNo, long hotelId, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
         this.roomNo = roomNo;
         this.hotelId = hotelId;
         this.roomTypeModel = roomTypeModel;
         this.occupancy = occupancy;
         this.priceIncludes = priceIncludes;
         this.status = status;
+        this.avatar = avatar;
     }
+    
+    
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    
 
     
     public long getRoomNo() {

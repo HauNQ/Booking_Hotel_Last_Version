@@ -19,12 +19,12 @@ public class HotelModel {
     private String phone;
     private double starRating;
     private List<RoomModel> rooms;
-    
+    private String avatar;
             
     public HotelModel() {
     }
 
-    public HotelModel(long id, String name, String address, String postcode, int numRooms, String phone, double starRating, List<RoomModel> rooms) {
+    public HotelModel(long id, String name, String address, String postcode, int numRooms, String phone, double starRating, List<RoomModel> rooms, String avatar) {
         this.id = id;
         this.name = name;
         this.address = address;
@@ -33,7 +33,20 @@ public class HotelModel {
         this.phone = phone;
         this.starRating = starRating;
         this.rooms = rooms;
+        this.avatar = avatar;
     }
+    
+    
+
+    public String getAvatar() {
+        return avatar;
+    }
+
+    public void setAvatar(String avatar) {
+        this.avatar = avatar;
+    }
+
+    
     
     
     
@@ -106,8 +119,10 @@ public class HotelModel {
 
     @Override
     public String toString() {
-        return "HotelModel{" + "id=" + id + ", name=" + name + ", address=" + address + ", postcode=" + postcode + ", numRooms=" + numRooms + ", phone=" + phone + ", starRating=" + starRating + ", rooms=" + rooms + '}';
+        return "HotelModel{" + "id=" + id + ", name=" + name + ", address=" + address + ", postcode=" + postcode + ", numRooms=" + numRooms + ", phone=" + phone + ", starRating=" + starRating + ", rooms=" + rooms + ", avatar=" + avatar + '}';
     }
+
+    
 
     
     

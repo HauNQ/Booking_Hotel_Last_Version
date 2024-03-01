@@ -42,6 +42,7 @@ public class SupplierMapping implements IRowMapping<SupplierModel> {
             supplierModel.setModifiedBy(rs.getLong("modifiedBy"));
             supplierModel.setModifiedDate(rs.getTimestamp("modifiedDate"));
             supplierModel.setCreatedDate(rs.getTimestamp("createdDate"));
+            supplierModel.setAvatar("avatar");
         } catch (SQLException ex) {
             Logger.getLogger(SupplierMapping.class.getName()).log(Level.SEVERE, null, ex);
             supplierModel=  null;

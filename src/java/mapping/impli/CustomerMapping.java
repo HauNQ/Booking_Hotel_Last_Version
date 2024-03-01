@@ -38,7 +38,7 @@ public class CustomerMapping implements IRowMapping<CustomerModel> {
             customerModel.setModifiedBy(rs.getLong("modifiedBy"));
             customerModel.setModifiedDate(rs.getTimestamp("modifiedDate"));
             customerModel.setCreatedDate(rs.getTimestamp("createdDate"));
-
+            customerModel.setAvatar(rs.getString("avatar"));
         } catch (SQLException ex) {
             Logger.getLogger(CustomerMapping.class.getName()).log(Level.SEVERE, null, ex);
             customerModel = null;
