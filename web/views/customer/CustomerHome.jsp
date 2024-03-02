@@ -242,8 +242,6 @@
 
 		</div>
 	</div>
-
-
    <script>   
               var open = true;
               function openOrCloseSidebar(){
@@ -311,8 +309,6 @@
             }
 
    </script>
-
-
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script src='<c:url value="/assets/customer/assets/js/jquery-3.5.1.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/popper.min.js"></c:url>'></script>

@@ -38,14 +38,14 @@
      <!-- Template Stylesheet -->
      <link href='<c:url value="/assets/customer/assets/css/style2.css"></c:url>' rel="stylesheet">
 
-<body>
+<body id="bodyTag">
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left">
-				<a href="index.html" class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
-				<a href="index.html" class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
+				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
+				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
 			</div>
-			<a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
+                        <a href="javascript:void(0);" id="toggle_btn" onclick="openOrCloseSidebar()"> <i class="fe fe-text-align-left"></i> </a>
 			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
 			<ul class="nav user-menu">
 				<li class="nav-item dropdown noti-dropdown">
@@ -123,18 +123,12 @@
 						</div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a> </div>
 				</li>
 			</ul>
-			<div class="top-nav-search">
-				<form>
-					<input type="text" class="form-control" placeholder="Search here">
-					<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-				</form>
-			</div>
 		</div>
 		<div class="sidebar" id="sidebar">
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
-						<li class="active"> <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Home</span></a> </li>
+						<li class="active"> <a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>'><i class="fas fa-tachometer-alt"></i> <span>Home</span></a> </li>
 						<li class="list-divider"></li>
 						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
@@ -146,7 +140,7 @@
 						<li class=""> <a href="#"><i class="fas fa-user"></i> <span> Favourite List </span></a></li>
                         <li class=""> <a href="invoices.html"><i class="fas fa-user"></i> <span> Invoices</span></a></li>
                         <li class=""> <a href="payments.html"><i class="fas fa-user"></i> <span> Payments</span></a></li>
-						<li> <a href="calendar.html"><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
+                        <li> <a href='<c:url value="/views/customer/Calendar.jsp"></c:url>'><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="expense-reports.html">Spending </a></li>
@@ -170,24 +164,28 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control datetimepicker">
+                                    <input type="text" class="form-control" min="0">
+                                </div>
+                            </div>
+							<div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Min Price</label>
+									<input type="number" class="form-control" min="0">
+                                </div>
+                            </div>
+							<div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Max Price</label>
+									<input type="number" class="form-control" min="0">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>From</label>
-                                    <div class="cal-icon">
-                                        <input type="date" class="form-control datetimepicker"> </div>
+                                    <input type="date" class="form-control"> 
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>To</label>
-                                    <div class="cal-icon">
-                                        <input type="date" class="form-control datetimepicker"> </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label> Search</label> <a href="#" class="btn btn-success btn-block mt-0 search_button"> Search </a> </div>
                             </div>
@@ -214,99 +212,103 @@
                                         </div>
                                     </div>
                                     <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                        <small class="flex-fill text-center border-end py-2 text-white"><i class="fa fa-calendar-alt text-white me-2 mr-1"></i>28 Jan 2050</small>
-                                        <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-white me-2"></i>1.7K</a>
-                                        <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-white me-2"></i>1K</a>
+                                        <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><p class="mb-3">${room.hotelModel.name}</p></a>
                                     </div>
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                    <p class="mb-3">${room.hotelName}</p>
-                                    <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.roomType}</a>
-                                    <p class="my-3">${room.roomTypeModel.money}</p>
+                                    <p class="mb-3">${room.roomTypeModel.roomType}</p>
+                                    <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.money}vnd</a>
+                                    <p class="my-3"></p>
+				    <p class="mb-3">${room.hotelModel.address}</p>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Booking Now</a>
                                 </div>
                             </div>
                         </div>
                     </c:forEach>
-                </c:if>
-                    <!-- <div class="col-lg-4 col-md-6 mt-2">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src='<c:url value="/assets/customer/img/blog-1.jpg"></c:url>' alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2 text-white"><i class="fa fa-calendar-alt text-white me-2 mr-1"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-white me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-white me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4" style="color: #009688;">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-								<a href="#" class="btn btn-primary rounded-pill py-2 px-4">Booking Now</a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-4 col-md-6 mt-2">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src='<c:url value="/assets/customer/img/blog-2.jpg"></c:url>' alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-2">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src='<c:url value="/assets/customer/img/blog-3.jpg"></c:url>' alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div> -->
-					
+                </c:if>	
                 </div>
+                <!<!-- Paging -->
+                <nav aria-label="..." class="mt-4">
+                    <ul id="paging" class="pagination" style="justify-content: center">
+                      <!-- <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1" style="color: #009688;">Previous</a>
+                      </li> -->
+					  
+                    </ul>
+                </nav>
             </div>
             </div>
 
 		</div>
 	</div>
+   <script>   
+              var open = true;
+              function openOrCloseSidebar(){
+                  if(open){
+                      document.getElementById("bodyTag").classList.add("mini-sidebar");
+                      open = false;
+                  }else{
+                      document.getElementById("bodyTag").classList.remove("mini-sidebar");
+                      open = true;
+                  }
+              }
+              
+              
+	       var url = "/BookingHotel_Prj301/HomeCustomerController?fetch=6&page=";  
+		   var paging = document.getElementById("paging");
+
+		   for(let i = 1; i <= ${totalPage}; i++){
+			    
+			    if(i === 1){
+					var liTag = document.createElement("li");
+					var aTag = document.createElement("a");
+					var text  = document.createTextNode("Previous");
+					liTag.classList.add("page-item");
+					aTag.classList.add("page-link");
+					if(${page} === 1){
+						aTag.href=(url+${page});
+					}else{
+						aTag.href=(url+(${page-1}));
+					}
+					aTag.appendChild(text);
+					liTag.appendChild(aTag);
+					paging.appendChild(liTag);
+				}
+
+                var liTag = document.createElement("li");
+                var aTag = document.createElement("a");
+                var text  = document.createTextNode(i);
+                liTag.classList.add("page-item");
+                aTag.classList.add("page-link");
+                aTag.href=(url+i);
+                aTag.appendChild(text);
+                liTag.appendChild(aTag);
+                paging.appendChild(liTag);
+
+				if(${page} === i){
+                  liTag.classList.add("active");
+                }    
+
+				if(i === ${totalPage}){
+					var liTag = document.createElement("li");
+					var aTag = document.createElement("a");
+					var text  = document.createTextNode("Next");
+					liTag.classList.add("page-item");
+					aTag.classList.add("page-link");
+					if(${page} === ${totalPage}){
+						aTag.href=(url+${totalPage});
+					}else{
+						aTag.href=(url+${page+1});
+					}
+					aTag.appendChild(text);
+					liTag.appendChild(aTag);
+					paging.appendChild(liTag);
+				}
+         
+            }
+
+   </script>
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script src='<c:url value="/assets/customer/assets/js/jquery-3.5.1.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/popper.min.js"></c:url>'></script>
