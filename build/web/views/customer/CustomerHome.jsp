@@ -217,7 +217,7 @@
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
                                     <p class="mb-3">${room.roomTypeModel.roomType}</p>
-                                    <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.money}vnd</a>
+                                    <a href="#" class="h4" style="color: #009688;">${room.money}vnd</a>
                                     <p class="my-3"></p>
 				    <p class="mb-3">${room.hotelModel.address}</p>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>

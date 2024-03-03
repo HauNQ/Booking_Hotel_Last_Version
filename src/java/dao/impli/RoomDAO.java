@@ -30,11 +30,15 @@ public class RoomDAO extends AbstractModel implements IRoomDAO {
 
 //    public static void main(String[] args) {
 //        RoomDAO roomDAo = new RoomDAO();
+
 //        System.out.println(roomDAo.findBy(1).toString());
 //        for (RoomModel room : roomDAo.findWithLimit(0, 6)) {
 //            System.out.println(room.toString());
 //        }
 
+//        for (RoomModel room : roomDAo.findWithLimit(0, 6)) {
+//            System.out.println(room.toString());
+//        }
 //    }
 
     @Override
