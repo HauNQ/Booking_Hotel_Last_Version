@@ -254,7 +254,6 @@
                   }
               }
               
-              
 	       var url = "/BookingHotel_Prj301/HomeCustomerController?fetch=6&page=";  
 		   var paging = document.getElementById("paging");
 
