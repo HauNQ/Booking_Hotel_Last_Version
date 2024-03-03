@@ -220,7 +220,7 @@
                                     </div>
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                    <p class="mb-3">${room.hotelName}</p>
+                                    <p class="mb-3">${room.hotelId}</p>
                                     <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.roomType}</a>
                                     <p class="my-3">${room.roomTypeModel.money}</p>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
@@ -229,84 +229,81 @@
                             </div>
                         </div>
                     </c:forEach>
-                </c:if>
-                    <!-- <div class="col-lg-4 col-md-6 mt-2">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src='<c:url value="/assets/customer/img/blog-1.jpg"></c:url>' alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2 text-white"><i class="fa fa-calendar-alt text-white me-2 mr-1"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-white me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-white me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4" style="color: #009688;">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-								<a href="#" class="btn btn-primary rounded-pill py-2 px-4">Booking Now</a>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-lg-4 col-md-6 mt-2">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src='<c:url value="/assets/customer/img/blog-2.jpg"></c:url>' alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 mt-2">
-                        <div class="blog-item">
-                            <div class="blog-img">
-                                <div class="blog-img-inner">
-                                    <img class="img-fluid w-100 rounded-top" src='<c:url value="/assets/customer/img/blog-3.jpg"></c:url>' alt="Image">
-                                    <div class="blog-icon">
-                                        <a href="#" class="my-auto"><i class="fas fa-link fa-2x text-white"></i></a>
-                                    </div>
-                                </div>
-                                <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-calendar-alt text-primary me-2"></i>28 Jan 2050</small>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-primary me-2"></i>1.7K</a>
-                                    <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-primary me-2"></i>1K</a>
-                                </div>
-                            </div>
-                            <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                <p class="mb-3">Posted By: Royal Hamblin </p>
-                                <a href="#" class="h4">Adventures Trip</a>
-                                <p class="my-3">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam eos</p>
-                                <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                            </div>
-                        </div>
-                    </div> -->
-					
+                </c:if>	
                 </div>
+                <!<!-- Paging -->
+                <nav aria-label="..." class="mt-4">
+                    <ul id="paging" class="pagination" style="justify-content: center">
+                      <!-- <li class="page-item disabled">
+                          <a class="page-link" href="#" tabindex="-1" style="color: #009688;">Previous</a>
+                      </li> -->
+					  
+                    </ul>
+                </nav>
             </div>
             </div>
 
 		</div>
 	</div>
+
+
+   <script>
+	       var url = "/BookingHotel_Prj301/HomeCustomerController?fetch=6&page=";  
+		   var paging = document.getElementById("paging");
+
+		   for(let i = 1; i <= ${totalPage}; i++){
+			    
+			    if(i === 1){
+					var liTag = document.createElement("li");
+					var aTag = document.createElement("a");
+					var text  = document.createTextNode("Previous");
+					liTag.classList.add("page-item");
+					aTag.classList.add("page-link");
+					if(${page} === 1){
+						aTag.href=(url+${page});
+					}else{
+						aTag.href=(url+(${page-1}));
+					}
+					aTag.appendChild(text);
+					liTag.appendChild(aTag);
+					paging.appendChild(liTag);
+				}
+
+                var liTag = document.createElement("li");
+                var aTag = document.createElement("a");
+                var text  = document.createTextNode(i);
+                liTag.classList.add("page-item");
+                aTag.classList.add("page-link");
+                aTag.href=(url+i);
+                aTag.appendChild(text);
+                liTag.appendChild(aTag);
+                paging.appendChild(liTag);
+
+				if(${page} === i){
+                  liTag.classList.add("active");
+                }    
+
+				if(i === ${totalPage}){
+					var liTag = document.createElement("li");
+					var aTag = document.createElement("a");
+					var text  = document.createTextNode("Next");
+					liTag.classList.add("page-item");
+					aTag.classList.add("page-link");
+					if(${page} === ${totalPage}){
+						aTag.href=(url+${totalPage});
+					}else{
+						aTag.href=(url+${page+1});
+					}
+					aTag.appendChild(text);
+					liTag.appendChild(aTag);
+					paging.appendChild(liTag);
+				}
+         
+            }
+
+   </script>
+
+
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script src='<c:url value="/assets/customer/assets/js/jquery-3.5.1.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/popper.min.js"></c:url>'></script>

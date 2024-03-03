@@ -62,7 +62,7 @@ public class HomeCustomerController extends HttpServlet {
         
         
         request.setAttribute("page", page);
-        request.setAttribute("totalPage",(int)Math.ceil(roomService.countTotal()/fetch));
+        request.setAttribute("totalPage",(int)Math.ceil(roomService.countTotal()/fetch)+1);
         request.setAttribute("rooms",roomService.findWithLimit(offset, fetch));
 
         // send 
