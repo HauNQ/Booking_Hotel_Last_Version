@@ -11,6 +11,7 @@ package model;
 public class RoomModel {
     private long roomNo;
     private long hotelId;
+    private String hotelName;
     private RoomTypeModel roomTypeModel;
     private int occupancy;
     private String priceIncludes;
@@ -20,15 +21,28 @@ public class RoomModel {
     public RoomModel() {
     }
 
-    public RoomModel(long roomNo, long hotelId, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
+    public RoomModel(long roomNo, long hotelId, String hotelName, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
         this.roomNo = roomNo;
         this.hotelId = hotelId;
+        this.hotelName = hotelName;
         this.roomTypeModel = roomTypeModel;
         this.occupancy = occupancy;
         this.priceIncludes = priceIncludes;
         this.status = status;
         this.avatar = avatar;
     }
+    
+    
+
+    public String getHotelName() {
+        return hotelName;
+    }
+
+    public void setHotelName(String hotelName) {
+        this.hotelName = hotelName;
+    }
+
+    
     
     
 
@@ -95,9 +109,7 @@ public class RoomModel {
 
     @Override
     public String toString() {
-        return "RoomModel{" + "roomNo=" + roomNo + ", hotelId=" + hotelId + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + '}';
+        return "RoomModel{" + "roomNo=" + roomNo + ", hotelId=" + hotelId + ", hotelName=" + hotelName + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + ", avatar=" + avatar + '}';
     }
-    
-    
-    
+
 }

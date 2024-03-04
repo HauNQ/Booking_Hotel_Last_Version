@@ -52,6 +52,7 @@ go
 create table Room
 (roomNo bigint identity(1,1),
 hotelID bigint,
+hotelName varchar(50),
 roomTypeId bigint,
 occupancy int,
 priceIncludes Text,

@@ -35,11 +35,11 @@ go
 
 
 -- Thêm dữ liệu cho bảng Room
-INSERT INTO Room (hotelID, roomTypeId, occupancy, priceIncludes, status,avatar)
+INSERT INTO Room (hotelID,hotelName, roomTypeId, occupancy, priceIncludes, status,avatar)
 VALUES 
-( 2, 1, 1, 'Breakfast', 1,null),
-( 1, 2, 2, 'Breakfast, Wi-Fi', 1,null),
-( 3, 3, 1, 'Breakfast, Parking', 1,null)
+( 2,'hotel B', 1, 1, 'Breakfast', 1,null),
+( 1,'hotel A', 2, 2, 'Breakfast, Wi-Fi', 1,null),
+( 3,'hotel C', 3, 1, 'Breakfast, Parking', 1,null)
 -- Tiếp tục thêm dữ liệu cho các phòng khác tương tự
 ;
 go
