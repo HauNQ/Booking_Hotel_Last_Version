@@ -42,8 +42,8 @@
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left">
-				<a href="index.html" class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
-				<a href="index.html" class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
+				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
+				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
 			</div>
 			<a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
 			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
@@ -123,18 +123,12 @@
 						</div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a> </div>
 				</li>
 			</ul>
-			<div class="top-nav-search">
-				<form>
-					<input type="text" class="form-control" placeholder="Search here">
-					<button class="btn" type="submit"><i class="fas fa-search"></i></button>
-				</form>
-			</div>
 		</div>
 		<div class="sidebar" id="sidebar">
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
-						<li class="active"> <a href="index.html"><i class="fas fa-tachometer-alt"></i> <span>Home</span></a> </li>
+						<li class="active"> <a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>'><i class="fas fa-tachometer-alt"></i> <span>Home</span></a> </li>
 						<li class="list-divider"></li>
 						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
@@ -146,7 +140,7 @@
 						<li class=""> <a href="#"><i class="fas fa-user"></i> <span> Favourite List </span></a></li>
                         <li class=""> <a href="invoices.html"><i class="fas fa-user"></i> <span> Invoices</span></a></li>
                         <li class=""> <a href="payments.html"><i class="fas fa-user"></i> <span> Payments</span></a></li>
-						<li> <a href="calendar.html"><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
+                        <li> <a href='<c:url value="/views/customer/Calendar.jsp"></c:url>'><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
 								<li><a href="expense-reports.html">Spending </a></li>
@@ -220,9 +214,10 @@
                                     </div>
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                    <p class="mb-3">${room.hotelId}</p>
+                                    <p class="mb-3">${room.hotelName}</p>
                                     <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.roomType}</a>
-                                    <p class="my-3">${room.roomTypeModel.money}</p>
+                                    <p class="my-3">${room.roomTypeModel.money}vnd</p>
+									<p class="mb-3">${room.hotelName}</p>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Booking Now</a>
                                 </div>
