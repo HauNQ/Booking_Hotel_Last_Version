@@ -38,14 +38,14 @@
      <!-- Template Stylesheet -->
      <link href='<c:url value="/assets/customer/assets/css/style2.css"></c:url>' rel="stylesheet">
 
-<body>
+<body id="bodyTag">
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left">
 				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
 				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
 			</div>
-			<a href="javascript:void(0);" id="toggle_btn"> <i class="fe fe-text-align-left"></i> </a>
+                        <a href="javascript:void(0);" id="toggle_btn" onclick="openOrCloseSidebar()"> <i class="fe fe-text-align-left"></i> </a>
 			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
 			<ul class="nav user-menu">
 				<li class="nav-item dropdown noti-dropdown">
@@ -164,24 +164,28 @@
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control datetimepicker">
+                                    <input type="text" class="form-control" min="0">
+                                </div>
+                            </div>
+							<div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Min Price</label>
+									<input type="number" class="form-control" min="0">
+                                </div>
+                            </div>
+							<div class="col-md-2">
+                                <div class="form-group">
+                                    <label>Max Price</label>
+									<input type="number" class="form-control" min="0">
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>From</label>
-                                    <div class="cal-icon">
-                                        <input type="date" class="form-control datetimepicker"> </div>
+                                    <input type="date" class="form-control"> 
                                 </div>
                             </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>To</label>
-                                    <div class="cal-icon">
-                                        <input type="date" class="form-control datetimepicker"> </div>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
+                            <div class="col-md-2">
                                 <div class="form-group">
                                     <label> Search</label> <a href="#" class="btn btn-success btn-block mt-0 search_button"> Search </a> </div>
                             </div>
@@ -208,16 +212,14 @@
                                         </div>
                                     </div>
                                     <div class="blog-info d-flex align-items-center border border-start-0 border-end-0">
-                                        <small class="flex-fill text-center border-end py-2 text-white"><i class="fa fa-calendar-alt text-white me-2 mr-1"></i>28 Jan 2050</small>
-                                        <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><i class="fa fa-thumbs-up text-white me-2"></i>1.7K</a>
-                                        <a href="#" class="btn-hover flex-fill text-center text-white py-2"><i class="fa fa-comments text-white me-2"></i>1K</a>
+                                        <a href="#" class="btn-hover flex-fill text-center text-white border-end py-2"><p class="mb-3">${room.hotelModel.name}</p></a>
                                     </div>
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
-                                    <p class="mb-3">${room.hotelName}</p>
-                                    <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.roomType}</a>
-                                    <p class="my-3">${room.roomTypeModel.money}vnd</p>
-									<p class="mb-3">${room.hotelName}</p>
+                                    <p class="mb-3">${room.roomTypeModel.roomType}</p>
+                                    <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.money}vnd</a>
+                                    <p class="my-3"></p>
+				    <p class="mb-3">${room.hotelModel.address}</p>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Booking Now</a>
                                 </div>
@@ -242,7 +244,19 @@
 	</div>
 
 
-   <script>
+   <script>   
+              var open = true;
+              function openOrCloseSidebar(){
+                  if(open){
+                      document.getElementById("bodyTag").classList.add("mini-sidebar");
+                      open = false;
+                  }else{
+                      document.getElementById("bodyTag").classList.remove("mini-sidebar");
+                      open = true;
+                  }
+              }
+              
+              
 	       var url = "/BookingHotel_Prj301/HomeCustomerController?fetch=6&page=";  
 		   var paging = document.getElementById("paging");
 
