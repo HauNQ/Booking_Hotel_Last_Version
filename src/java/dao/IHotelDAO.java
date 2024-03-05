@@ -11,5 +11,6 @@ import model.HotelModel;
  * @author Nguyen Quang Hau
  */
 public interface IHotelDAO {
-    HotelModel findBy(long id);
+    HotelModel findBy(long hotelId);
+    HotelModel getHotel(long hotelId);
 }

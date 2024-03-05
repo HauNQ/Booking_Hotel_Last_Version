@@ -10,8 +10,7 @@ package model;
  */
 public class RoomModel {
     private long roomNo;
-    private long hotelId;
-    private String hotelName;
+    private HotelModel hotelModel;
     private RoomTypeModel roomTypeModel;
     private int occupancy;
     private String priceIncludes;
@@ -21,30 +20,15 @@ public class RoomModel {
     public RoomModel() {
     }
 
-    public RoomModel(long roomNo, long hotelId, String hotelName, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
+    public RoomModel(long roomNo, HotelModel hotelModel, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
         this.roomNo = roomNo;
-        this.hotelId = hotelId;
-        this.hotelName = hotelName;
+        this.hotelModel = hotelModel;
         this.roomTypeModel = roomTypeModel;
         this.occupancy = occupancy;
         this.priceIncludes = priceIncludes;
         this.status = status;
         this.avatar = avatar;
     }
-    
-    
-
-    public String getHotelName() {
-        return hotelName;
-    }
-
-    public void setHotelName(String hotelName) {
-        this.hotelName = hotelName;
-    }
-
-    
-    
-    
 
     public String getAvatar() {
         return avatar;
@@ -52,6 +36,14 @@ public class RoomModel {
 
     public void setAvatar(String avatar) {
         this.avatar = avatar;
+    }
+
+    public HotelModel getHotelModel() {
+        return hotelModel;
+    }
+
+    public void setHotelModel(HotelModel hotelModel) {
+        this.hotelModel = hotelModel;
     }
 
     
@@ -64,17 +56,7 @@ public class RoomModel {
     public void setRoomNo(long roomNo) {
         this.roomNo = roomNo;
     }
-
-    public long getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(long hotelId) {
-        this.hotelId = hotelId;
-    }
-
     
-
     public RoomTypeModel getRoomTypeModel() {
         return roomTypeModel;
     }
@@ -109,7 +91,9 @@ public class RoomModel {
 
     @Override
     public String toString() {
-        return "RoomModel{" + "roomNo=" + roomNo + ", hotelId=" + hotelId + ", hotelName=" + hotelName + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + ", avatar=" + avatar + '}';
+        return "RoomModel{" + "roomNo=" + roomNo + ", hotelModel=" + hotelModel + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + ", avatar=" + avatar + '}';
     }
+
+    
 
 }

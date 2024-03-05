@@ -29,8 +29,7 @@ public class RoomMapping implements IRowMapping<RoomModel>{
         
         try {
             roomModel.setRoomNo(rs.getLong("roomNo"));
-            roomModel.setHotelId(rs.getLong("hotelID"));
-            roomModel.setHotelName(rs.getString("hotelName"));
+            roomModel.setHotelModel(hotelDAO.getHotel(rs.getLong("hotelID")));
             roomModel.setRoomTypeModel(roomTypeDAO.findBy(rs.getLong("roomTypeId")));
             roomModel.setOccupancy(rs.getInt("occupancy"));
             roomModel.setPriceIncludes(rs.getString("priceIncludes"));

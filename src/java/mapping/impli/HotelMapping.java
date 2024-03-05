@@ -30,8 +30,7 @@ public class HotelMapping implements IRowMapping<HotelModel>{
             hotelModel.setPostcode(rs.getString("postcode"));
             hotelModel.setNumRooms(rs.getInt("numRooms"));
             hotelModel.setPhone(rs.getString("phone"));
-            hotelModel.setStarRating(rs.getDouble("starRating"));
-            hotelModel.setRooms(roomDAO.findByHotel(hotelModel.getId()));   
+            hotelModel.setStarRating(rs.getDouble("starRating"));  
             hotelModel.setAvatar(rs.getString("avatar"));
         } catch (SQLException ex) {
             Logger.getLogger(HotelMapping.class.getName()).log(Level.SEVERE, null, ex);

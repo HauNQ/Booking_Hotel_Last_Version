@@ -13,5 +13,5 @@ import model.RoomModel;
  */
 public interface IRoomDAO {
     RoomModel findBy(long roomNo);
-    List<RoomModel> findByHotel(long hotelId);
+    List<RoomModel> getRoomsListFromHotel(long hotelId);
 }
