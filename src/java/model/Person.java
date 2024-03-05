@@ -25,6 +25,8 @@ public abstract class Person {
     private Timestamp modifiedDate;
     private Timestamp createdDate;
     private String avatar;
+    private String capcha;
+    private Timestamp validCapchaTime;
     
     public Person() {
     }
@@ -44,6 +46,24 @@ public abstract class Person {
         this.createdDate = createdDate;
         this.avatar = avatar;
     }
+
+    public String getCapcha() {
+        return capcha;
+    }
+
+    public void setCapcha(String capcha) {
+        this.capcha = capcha;
+    }
+
+    public Timestamp getValidCapchaTime() {
+        return validCapchaTime;
+    }
+
+    public void setValidCapchaTime(Timestamp validCapchaTime) {
+        this.validCapchaTime = validCapchaTime;
+    }
+    
+    
 
     public String getAvatar() {
         return avatar;

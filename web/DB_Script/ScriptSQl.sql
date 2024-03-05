@@ -1,4 +1,5 @@
 
+
 create database BookingHotel
 go
 
@@ -33,6 +34,8 @@ modifiedBy bigint,
 modifiedDate datetime,
 createdDate datetime,
 avatar text,
+capcha varchar(10),
+validCapchaTime datetime,
 PRIMARY KEY (ID),
 FOREIGN KEY (role) REFERENCES role(code));
 go
@@ -52,7 +55,6 @@ go
 create table Room
 (roomNo bigint identity(1,1),
 hotelID bigint,
-hotelName varchar(50),
 roomTypeId bigint,
 occupancy int,
 priceIncludes Text,
@@ -79,13 +81,15 @@ modifiedBy bigint,
 modifiedDate datetime,
 createdDate datetime,
 avatar text,
+capcha varchar(10),
+validCapchaTime datetime,
 PRIMARY KEY (ID),
 FOREIGN KEY (role) REFERENCES role(code),
 FOREIGN KEY (hotelId) REFERENCES Hotel(id));
 go
 
 CREATE TABLE [Admin] (
-    id INT IDENTITY(1,1),
+    id bigint IDENTITY(1,1),
     fullname VARCHAR(100),
     password varchar(100),
     dob DATE,
@@ -98,6 +102,8 @@ CREATE TABLE [Admin] (
     modifiedDate DATETIME,
     createdDate DATETIME,
     avatar text,
+	capcha varchar(10),
+	validCapchaTime datetime,
     PRIMARY KEY (ID),
     FOREIGN KEY ([role]) REFERENCES [role](code)
 );
