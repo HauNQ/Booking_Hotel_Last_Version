@@ -13,16 +13,14 @@ import java.math.BigDecimal;
 public class RoomTypeModel {
    private long id;
    private String roomType;
-   private java.math.BigDecimal money;
    private String roomDesc;
 
     public RoomTypeModel() {
     }
 
-    public RoomTypeModel(long id, String roomType, BigDecimal money, String roomDesc) {
+    public RoomTypeModel(long id, String roomType, String roomDesc) {
         this.id = id;
         this.roomType = roomType;
-        this.money = money;
         this.roomDesc = roomDesc;
     }
 
@@ -42,13 +40,6 @@ public class RoomTypeModel {
         this.roomType = roomType;
     }
 
-    public BigDecimal getMoney() {
-        return money;
-    }
-
-    public void setMoney(BigDecimal money) {
-        this.money = money;
-    }
 
     public String getRoomDesc() {
         return roomDesc;
@@ -60,6 +51,8 @@ public class RoomTypeModel {
 
     @Override
     public String toString() {
-        return "RoomTypeModel{" + "id=" + id + ", roomType=" + roomType + ", money=" + money + ", roomDesc=" + roomDesc + '}';
+        return "RoomTypeModel{" + "id=" + id + ", roomType=" + roomType + ", roomDesc=" + roomDesc + '}';
     }
+
+    
 }

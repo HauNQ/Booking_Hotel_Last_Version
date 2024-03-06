@@ -15,5 +15,5 @@ public interface GenericDAO{
    <T> List<T> query(String sql, IRowMapping mapper, Object... parameters);
    boolean update(String sql, Object... parameters);
    Long insert(String sql, Object... parameters);
-   int countRows(String sql);
+   int countRows(String sql, Object... parameters);
 }

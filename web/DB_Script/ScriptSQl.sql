@@ -15,7 +15,6 @@ go
 create table RoomType
 (roomTypeId bigint identity(1,1),
 roomType varchar(30),
-price money,
 roomDesc text,
 PRIMARY KEY (roomTypeId))
 go
@@ -60,6 +59,7 @@ occupancy int,
 priceIncludes Text,
 status smallint,
 avatar text,
+price money,
 PRIMARY KEY (roomNo),
 FOREIGN KEY (hotelID) REFERENCES hotel(id),
 FOREIGN KEY (roomTypeId) REFERENCES roomType(roomTypeId));

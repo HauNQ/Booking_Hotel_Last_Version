@@ -122,7 +122,7 @@ public class AbstractModel implements GenericDAO {
     }
 
     @Override
-    public int countRows(String sql) {
+    public int countRows(String sql, Object... parameters) {
         Connection connection = null;
         PreparedStatement statement = null;
         ResultSet rs = null;
@@ -131,6 +131,7 @@ public class AbstractModel implements GenericDAO {
             connection = JDBCUtill.getConnection();
             if (connection != null) {
                 statement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+                mapParameter(statement, parameters);
                 rs = statement.executeQuery();
 
                 if (rs.next()) {

@@ -4,6 +4,8 @@
  */
 package model;
 
+import java.math.BigDecimal;
+
 /**
  *
  * @author Nguyen Quang Hau
@@ -16,11 +18,11 @@ public class RoomModel {
     private String priceIncludes;
     private short status;
     private String avatar;
-    
+    private java.math.BigDecimal money;
     public RoomModel() {
     }
 
-    public RoomModel(long roomNo, HotelModel hotelModel, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
+    public RoomModel(long roomNo, HotelModel hotelModel, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar, BigDecimal money) {
         this.roomNo = roomNo;
         this.hotelModel = hotelModel;
         this.roomTypeModel = roomTypeModel;
@@ -28,8 +30,19 @@ public class RoomModel {
         this.priceIncludes = priceIncludes;
         this.status = status;
         this.avatar = avatar;
+        this.money = money;
     }
 
+    
+
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+    
     public String getAvatar() {
         return avatar;
     }
@@ -91,9 +104,6 @@ public class RoomModel {
 
     @Override
     public String toString() {
-        return "RoomModel{" + "roomNo=" + roomNo + ", hotelModel=" + hotelModel + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + ", avatar=" + avatar + '}';
+        return "RoomModel{" + "roomNo=" + roomNo + ", hotelModel=" + hotelModel + ", roomTypeModel=" + roomTypeModel + ", occupancy=" + occupancy + ", priceIncludes=" + priceIncludes + ", status=" + status + ", avatar=" + avatar + ", money=" + money + '}';
     }
-
-    
-
 }

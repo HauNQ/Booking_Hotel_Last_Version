@@ -25,7 +25,6 @@ public class RoomTypeMapping implements IRowMapping<RoomTypeModel>{
         try {
             roomTypeModel.setId(rs.getLong("roomTypeId"));
             roomTypeModel.setRoomType(rs.getString("roomType"));
-            roomTypeModel.setMoney(rs.getBigDecimal("price"));
             roomTypeModel.setRoomDesc(rs.getString("roomDesc"));
         } catch (SQLException ex) {
             Logger.getLogger(RoomTypeMapping.class.getName()).log(Level.SEVERE, null, ex);

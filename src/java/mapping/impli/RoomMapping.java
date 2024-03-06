@@ -35,6 +35,7 @@ public class RoomMapping implements IRowMapping<RoomModel>{
             roomModel.setPriceIncludes(rs.getString("priceIncludes"));
             roomModel.setStatus(rs.getShort("status"));
             roomModel.setAvatar("avatar");
+            roomModel.setMoney(rs.getBigDecimal("price"));
         } catch (SQLException ex) {
             Logger.getLogger(RoomMapping.class.getName()).log(Level.SEVERE, null, ex);
             roomModel = null;

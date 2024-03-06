@@ -9,11 +9,11 @@ VALUES
 
 go
 
-INSERT INTO RoomType (roomType, price, roomDesc)
+INSERT INTO RoomType (roomType, roomDesc)
 VALUES 
-('Single', 100.00, 'Single bed room with basic amenities'),
-('Double', 150.00, 'Double bed room suitable for couples'),
-('Suite', 250.00, 'Luxurious suite with living area and kitchenette');
+('Single', 'Single bed room with basic amenities'),
+('Double', 'Double bed room suitable for couples'),
+('Suite', 'Luxurious suite with living area and kitchenette');
 go
 
 
@@ -35,11 +35,11 @@ go
 
 
 -- Thêm dữ liệu cho bảng Room
-INSERT INTO Room (hotelID, roomTypeId, occupancy, priceIncludes, status,avatar)
+INSERT INTO Room (hotelID, roomTypeId, occupancy, priceIncludes, status,avatar, price)
 VALUES 
-( 2, 1, 1, 'Breakfast', 1,null),
-( 1, 2, 2, 'Breakfast, Wi-Fi', 1,null),
-( 3, 3, 1, 'Breakfast, Parking', 1,null)
+( 2, 1, 1, 'Breakfast', 1,null,200.000),
+( 1, 2, 2, 'Breakfast, Wi-Fi', 1,null,399.000),
+( 3, 3, 1, 'Breakfast, Parking', 1,null,1.000000)
 -- Tiếp tục thêm dữ liệu cho các phòng khác tương tự
 ;
 go
