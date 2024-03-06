@@ -217,11 +217,7 @@
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
                                     <p class="mb-3">${room.roomTypeModel.roomType}</p>
-<<<<<<< HEAD
                                     <a href="#" class="h4" style="color: #009688;">${room.money}vnd</a>
-=======
-                                    <a href="#" class="h4" style="color: #009688;">${room.roomTypeModel.money}vnd</a>
->>>>>>> d1d8765 (commit RoomDao and Customer home)
                                     <p class="my-3"></p>
 				    <p class="mb-3">${room.hotelModel.address}</p>
                                     <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
@@ -246,11 +242,6 @@
 
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> d1d8765 (commit RoomDao and Customer home)
    <script>   
               var open = true;
               function openOrCloseSidebar(){
@@ -317,11 +308,6 @@
             }
 
    </script>
-<<<<<<< HEAD
-=======
-
-
->>>>>>> d1d8765 (commit RoomDao and Customer home)
 	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
 	<script src='<c:url value="/assets/customer/assets/js/jquery-3.5.1.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/popper.min.js"></c:url>'></script>

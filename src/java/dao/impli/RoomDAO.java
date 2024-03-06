@@ -27,6 +27,11 @@ public class RoomDAO extends AbstractModel implements IRoomDAO {
         String sql = "SELECT * FROM Room WHERE hotelID = ?";
         return query(sql, new RoomMapping(), hotelId);
     }
+    
+    public static void main(String[] args) {
+        RoomDAO r = new RoomDAO();
+        System.out.println(r.findWithLimit(0, 4));
+    }
 
 //    public static void main(String[] args) {
 //        RoomDAO roomDAo = new RoomDAO();
