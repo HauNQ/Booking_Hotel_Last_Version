@@ -31,6 +31,27 @@ public class RoomDAO extends AbstractModel implements IRoomDAO {
 //    public static void main(String[] args) {
 //        RoomDAO roomDAo = new RoomDAO();
 //        System.out.println(roomDAo.findBy(1).toString());
+//        for (RoomModel room : roomDAo.findWithLimit(0, 6)) {
+//            System.out.println(room.toString());
+//        }
+
 //    }
+
+    @Override
+    public List<RoomModel> findWithLimit(int offset, int fetch) {
+        StringBuilder sql = new StringBuilder();
+        sql.append("select * from Room ");
+        sql.append("where status = 1 ");
+        sql.append("order by roomNo asc ");
+        sql.append("offset ? rows ");
+        sql.append("fetch next ? rows only");
+        return query(sql.toString(), new RoomMapping(), offset,fetch);
+    }
+
+    @Override
+    public Integer countTotal() {
+        String sql = "SELECT COUNT(*) from ROOM";
+        return countRows(sql);
+    }
 
 }

@@ -14,4 +14,6 @@ import model.RoomModel;
 public interface IRoomDAO {
     RoomModel findBy(long roomNo);
     List<RoomModel> getRoomsListFromHotel(long hotelId);
+    List<RoomModel> findWithLimit(int offset, int fetch);
+    Integer countTotal();
 }
