@@ -16,8 +16,24 @@ public class CustomerModel extends Person{
     public CustomerModel() {
     }
 
+    public CustomerModel(long id) {
+        super(id);
+    }
+    
     public CustomerModel(long id, String fullname, String password, Date dob, RoleModel roleModel, String email, String phone, short status, String address, long modifiedBy, Timestamp modifiedDate, Timestamp createdDate, String avatar) {
         super(id, fullname, password, dob, roleModel, email, phone, status, address, modifiedBy, modifiedDate, createdDate, avatar);
+    }
+    
+     public CustomerModel(long id, String fullname,String dob, String email, String phone,String address, String avatar) {
+        super(id, fullname, dob, email, phone, address, avatar);
+    }
+    
+    public CustomerModel(long id, String fullname,Date dob, String email, String phone,String address, String avatar) {
+        super(id, fullname, dob, email, phone, address, avatar);
+    }
+    
+    public CustomerModel(long id, String password) {
+        super(id, password);
     }
 
     @Override

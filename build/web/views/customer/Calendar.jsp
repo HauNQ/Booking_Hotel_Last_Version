@@ -105,7 +105,11 @@
 								<h6>Soeng Souy</h6>
 								<p class="text-muted mb-0">Administrator</p>
 							</div>
-						</div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a> </div>
+                                                        </div>
+                                                                <a class="dropdown-item" href="/BookingHotel_Prj301/views/customer/CustomerProfile.jsp">My Profile</a> 
+                                                                <a class="dropdown-item" href="<c:url value="/logout"></c:url>">Logout</a> 
+                                                        </div>
+						
 				</li>
 			</ul>
 		</div>
@@ -118,13 +122,15 @@
 						<li class="list-divider"></li>
 						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-booking.html">Pending Booking</a></li>
-								<li><a href="edit-booking.html">Denied Booking</a></li>
-								<li><a href="add-booking.html">Completed Booking</a></li>
+                                                                 <li><a href='<c:url value="/BookingController?action=paymentBooking&fetch=6&page=1"></c:url>'>Pending Payment</a></li>
+								<li><a href='<c:url value="/BookingController?action=pendingBooking&fetch=6&page=1"></c:url>'>Pending Booking</a></li>
+                                                                <li><a href='<c:url value="/BookingController?action=alreadyBooking&fetch=6&page=1"></c:url>'>Already Booking</a></li>
+								<li><a href='<c:url value="/BookingController?action=cancelBooking&fetch=6&page=1"></c:url>'>Denied Booking</a></li>
+								<li><a href='<c:url value="/BookingController?action=completedBooking&fetch=6&page=1"></c:url>'>Completed Booking</a></li>
 							</ul>
 						</li>
 						<li class=""> <a href="#"><i class="fas fa-user"></i> <span> Favourite List </span></a></li>
-                        <li class=""> <a href="invoices.html"><i class="fas fa-user"></i> <span> Invoices</span></a></li>
+                        <li class=""> <a href='<c:url value="/invoice"></c:url>'><i class="fas fa-user"></i> <span> Invoices</span></a></li>
                         <li class=""> <a href="payments.html"><i class="fas fa-user"></i> <span> Payments</span></a></li>
                         <li> <a href='<c:url value="/views/customer/Calendar.jsp"></c:url>'><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>

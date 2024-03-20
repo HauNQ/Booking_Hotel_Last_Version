@@ -36,7 +36,7 @@ public class BookingModel {
         this.numChilds = numChilds;
         this.specialReq = specialReq;
         this.status = status;
-    }
+    }    
 
     public long getId() {
         return id;

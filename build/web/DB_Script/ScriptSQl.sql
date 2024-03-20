@@ -185,6 +185,7 @@ customerID bigint,
 roomNo bigint,
 createdDate datetime,
 content text,
+status smallint,
 FOREIGN KEY (customerID) REFERENCES customer(id),
 FOREIGN KEY (roomNo) REFERENCES room(roomNo));
 

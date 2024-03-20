@@ -11,8 +11,9 @@ import java.sql.Timestamp;
  *
  * @author Nguyen Quang Hau
  */
-public class SupplierModel extends Person{
-  private HotelModel hotelModel;
+public class SupplierModel extends Person {
+
+    private HotelModel hotelModel;
 
     public SupplierModel() {
     }
@@ -22,8 +23,9 @@ public class SupplierModel extends Person{
         this.hotelModel = hotelModel;
     }
 
-    
-
+    public SupplierModel(String fullname, String email, String password, RoleModel roleModel, Date dob, String address, String tel) {
+        super(fullname, password, dob, roleModel, email, address, tel);
+    }
 
     public HotelModel getHotelModel() {
         return hotelModel;
@@ -35,7 +37,7 @@ public class SupplierModel extends Person{
 
     @Override
     public String toString() {
-        return super.toString()+":-- "+hotelModel.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
+        return super.toString() + ":-- " + hotelModel.toString(); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/OverriddenMethodBody
     }
 
 }

@@ -10,6 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 import mapping.IRowMapping;
 import java.sql.*;
+import java.util.HashMap;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import mapping.impli.ContractMapping;
 import util.JDBCUtill;
 
 /**
@@ -41,6 +45,7 @@ public class AbstractModel implements GenericDAO {
             }
         } catch (ClassNotFoundException | SQLException ex) {
             ex.printStackTrace();
+            Logger.getLogger(AbstractModel.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
             closeConnection(connection, statement, rs);
         }
@@ -172,6 +177,8 @@ public class AbstractModel implements GenericDAO {
                 statement.setShort(index, (short) parameter);
             }else if (parameter == null) {
                 statement.setNull(index, Types.NULL);
+            }else if(parameter instanceof Double){
+               statement.setDouble(index, (double) parameter);
             }
             index++;
         }
@@ -191,6 +198,36 @@ public class AbstractModel implements GenericDAO {
         } catch (SQLException ex) {
             ex.printStackTrace();
         }
+    }
+    
+    
+    @Override
+    public HashMap<Integer, Integer> numberHashMap(String sql) {
+        HashMap<Integer, Integer> hashMap = new HashMap<>();
+        Connection connection = null;
+        PreparedStatement statement = null;
+        ResultSet rs = null;
+        int count = 0;
+
+        try {
+            connection = JDBCUtill.getConnection();
+            if (connection != null) {
+                statement = connection.prepareStatement(sql);
+                mapParameter(statement);
+                rs = statement.executeQuery();
+                while (rs.next()) {
+                    hashMap.put(rs.getInt(1), rs.getInt(2));
+                }
+            } else {
+                hashMap = null;
+            }
+        } catch (ClassNotFoundException | SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            closeConnection(connection, statement, rs);
+        }
+
+     return hashMap ;
     }
 
 }

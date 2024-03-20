@@ -3,27 +3,48 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package model;
+
 import java.sql.*;
+
 /**
  *
  * @author Nguyen Quang Hau
  */
 public class FeedbackModel {
+
     private long id;
     private CustomerModel customerModel;
     private RoomModel roomModel;
     private Timestamp createdDate;
     private String content;
+    private short status;
 
     public FeedbackModel() {
     }
-
+    
     public FeedbackModel(long id, CustomerModel customerModel, RoomModel roomModel, Timestamp createdDate, String content) {
         this.id = id;
         this.customerModel = customerModel;
         this.roomModel = roomModel;
         this.createdDate = createdDate;
         this.content = content;
+    }
+
+    public FeedbackModel(long id, CustomerModel customerModel, RoomModel roomModel, Timestamp createdDate, String content, short status) {
+        this.id = id;
+        this.customerModel = customerModel;
+        this.roomModel = roomModel;
+        this.createdDate = createdDate;
+        this.content = content;
+        this.status = status;
+    }
+    
+    public short getStatus() {
+        return status;
+    }
+
+    public void setStatus(short status) {
+        this.status = status;
     }
 
     public long getId() {

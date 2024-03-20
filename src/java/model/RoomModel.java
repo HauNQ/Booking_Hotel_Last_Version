@@ -5,6 +5,8 @@
 package model;
 
 import java.math.BigDecimal;
+import java.text.NumberFormat;
+import java.util.Locale;
 
 /**
  *
@@ -19,9 +21,15 @@ public class RoomModel {
     private short status;
     private String avatar;
     private java.math.BigDecimal money;
+    
     public RoomModel() {
     }
 
+    public RoomModel(long roomNo) {
+        this.roomNo = roomNo;
+    }
+    
+    
     public RoomModel(long roomNo, HotelModel hotelModel, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar, BigDecimal money) {
         this.roomNo = roomNo;
         this.hotelModel = hotelModel;
@@ -32,6 +40,49 @@ public class RoomModel {
         this.avatar = avatar;
         this.money = money;
     }
+    
+    public RoomModel( HotelModel hotelModel, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar, BigDecimal money) {
+        this.roomNo = roomNo;
+        this.hotelModel = hotelModel;
+        this.roomTypeModel = roomTypeModel;
+        this.occupancy = occupancy;
+        this.priceIncludes = priceIncludes;
+        this.status = status;
+        this.avatar = avatar;
+        this.money = money;
+    }
+    
+    public RoomModel(long roomNo, long hotelId, RoomTypeModel roomTypeModel, int occupancy, String priceIncludes, short status, String avatar) {
+        this.roomNo = roomNo;
+        this.hotelModel.setId(hotelId);
+        this.roomTypeModel = roomTypeModel;
+        this.occupancy = occupancy;
+        this.priceIncludes = priceIncludes;
+        this.status = status;
+        this.avatar = avatar;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 89 * hash + (int) (this.roomNo ^ (this.roomNo >>> 32));
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final RoomModel other = (RoomModel) obj;
+        return this.roomNo == other.roomNo;
+    }
 
     
 
@@ -41,6 +92,10 @@ public class RoomModel {
 
     public void setMoney(BigDecimal money) {
         this.money = money;
+    }
+    
+    public String getFormatedPrice(){
+        return NumberFormat.getCurrencyInstance(new Locale("vi", "VN")).format(this.money);
     }
     
     public String getAvatar() {

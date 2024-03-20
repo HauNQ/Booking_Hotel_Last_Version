@@ -39,6 +39,8 @@ public class CustomerMapping implements IRowMapping<CustomerModel> {
             customerModel.setModifiedDate(rs.getTimestamp("modifiedDate"));
             customerModel.setCreatedDate(rs.getTimestamp("createdDate"));
             customerModel.setAvatar(rs.getString("avatar"));
+              customerModel.setCapcha(rs.getString("capcha"));
+            customerModel.setValidCapchaTime(rs.getTimestamp("validCapchaTime"));
         } catch (SQLException ex) {
             Logger.getLogger(CustomerMapping.class.getName()).log(Level.SEVERE, null, ex);
             customerModel = null;

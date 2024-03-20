@@ -14,7 +14,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
 	<title>Booking Hotel Home</title>
-    <link rel="shortcut icon" type="image/x-icon" href='<c:url value="/assets/customer/assets/img/favicon.png"></c:url>'>
+        <link rel="shortcut icon" type="image/x-icon" href='<c:url value="/assets/customer/assets/img/favicon.png"></c:url>'>
 	<link rel="stylesheet" href='<c:url value="/assets/customer/assets/css/bootstrap.min.css"></c:url>'>
 	<link rel="stylesheet" href='<c:url value="/assets/customer/assets/plugins/fontawesome/css/fontawesome.min.css"></c:url>'>
 	<link rel="stylesheet" href='<c:url value="/assets/customer/assets/plugins/fontawesome/css/all.min.css"></c:url>'>
@@ -22,105 +22,45 @@
 	<link rel="stylehseet" href="https://cdn.oesmith.co.uk/morris-0.5.1.css">
 	<link rel="stylesheet" href='<c:url value="/assets/customer/assets/plugins/morris/morris.css"></c:url>'>
 	<link rel="stylesheet" href='<c:url value="/assets/customer/assets/css/style.css"></c:url>'> </head>
-     <!-- Google Web Fonts -->
-     <link rel="preconnect" href="https://fonts.googleapis.com">
-     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
 
-     <!-- Icon Font Stylesheet -->
-     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
-     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-     <!-- Libraries Stylesheet -->
-     <link href='<c:url value="/assets/customer/lib/owlcarousel/assets/owl.carousel.min.css"></c:url>' rel="stylesheet">
-     <link href='<c:url value="/assets/customer/lib/lightbox/css/lightbox.min.css"></c:url>' rel="stylesheet">
+        <!-- Libraries Stylesheet -->
+        <link href='<c:url value="/assets/customer/lib/owlcarousel/assets/owl.carousel.min.css"></c:url>' rel="stylesheet">
+        <link href='<c:url value="/assets/customer/lib/lightbox/css/lightbox.min.css"></c:url>' rel="stylesheet">
 
-     <!-- Template Stylesheet -->
-     <link href='<c:url value="/assets/customer/assets/css/style2.css"></c:url>' rel="stylesheet">
+        <!-- Template Stylesheet -->
+        <link href='<c:url value="/assets/customer/assets/css/style2.css"></c:url>' rel="stylesheet">
 
 <body id="bodyTag">
 	<div class="main-wrapper">
 		<div class="header">
 			<div class="header-left">
-				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
-				<a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>' class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
+				<a href='<c:url value="/HomeCustomerController?action=roomHome&fetch=6&page=1"></c:url>' class="logo"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' width="50" height="70" alt="logo"> <span class="logoclass">Booking Hotel</span> </a>
+				<a href='<c:url value="/HomeCustomerController?action=roomHome&fetch=6&page=1"></c:url>' class="logo logo-small"> <img src='<c:url value="/assets/customer/assets/img/hotel_logo.png"></c:url>' alt="Logo" width="30" height="30"> </a>
 			</div>
                         <a href="javascript:void(0);" id="toggle_btn" onclick="openOrCloseSidebar()"> <i class="fe fe-text-align-left"></i> </a>
 			<a class="mobile_btn" id="mobile_btn"> <i class="fas fa-bars"></i> </a>
 			<ul class="nav user-menu">
-				<li class="nav-item dropdown noti-dropdown">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <i class="fe fe-bell"></i> <span class="badge badge-pill">3</span> </a>
-					<div class="dropdown-menu notifications">
-						<div class="topnav-dropdown-header"> <span class="notification-title">Notifications</span> <a href="javascript:void(0)" class="clear-noti"> Clear All </a> </div>
-						<div class="noti-content">
-							<ul class="notification-list">
-								<li class="notification-message">
-									<a href="#">
-										<div class="media"> <span class="avatar avatar-sm">
-											<img class="avatar-img rounded-circle" alt="User Image" src='<c:url value="/assets/customer/assets/img/profiles/avatar-02.jpg"></c:url>'>
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Carlson Tech</span> has approved <span class="noti-title">your estimate</span></p>
-												<p class="noti-time"><span class="notification-time">4 mins ago</span> </p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="#">
-										<div class="media"> <span class="avatar avatar-sm">
-											<img class="avatar-img rounded-circle" alt="User Image" src='<c:url value="/assets/customer/assets/img/profiles/avatar-11.jpg"></c:url>'>
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">International Software
-													Inc</span> has sent you a invoice in the amount of <span class="noti-title">$218</span></p>
-												<p class="noti-time"><span class="notification-time">6 mins ago</span> </p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="#">
-										<div class="media"> <span class="avatar avatar-sm">
-											<img class="avatar-img rounded-circle" alt="User Image" src='<c:url value="/assets/customer/assets/img/profiles/avatar-17.jpg"></c:url>'>
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">John Hendry</span> sent a cancellation request <span class="noti-title">Apple iPhone
-													XR</span></p>
-												<p class="noti-time"><span class="notification-time">8 mins ago</span> </p>
-											</div>
-										</div>
-									</a>
-								</li>
-								<li class="notification-message">
-									<a href="#">
-										<div class="media"> <span class="avatar avatar-sm">
-											<img class="avatar-img rounded-circle" alt="User Image" src='<c:url value="/assets/customer/assets/img/profiles/avatar-13.jpg"></c:url>'>
-											</span>
-											<div class="media-body">
-												<p class="noti-details"><span class="noti-title">Mercury Software
-												Inc</span> added a new product <span class="noti-title">Apple
-												MacBook Pro</span></p>
-												<p class="noti-time"><span class="notification-time">12 mins ago</span> </p>
-											</div>
-										</div>
-									</a>
-								</li>
-							</ul>
-						</div>
-						<div class="topnav-dropdown-footer"> <a href="#">View all Notifications</a> </div>
-					</div>
-				</li>
+
 				<li class="nav-item dropdown has-arrow">
-					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src='<c:url value="/assets/customer/assets/img/profiles/avatar-01.jpg"></c:url>' width="31" alt="Soeng Souy"></span> </a>
+					<a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"> <span class="user-img"><img class="rounded-circle" src='<c:url value="${(sessionScope.user.avatar == null)?'/images/defaultUser.jpg':sessionScope.user.avatar}"></c:url>' width="31" alt="Customer"></span> </a>
 					<div class="dropdown-menu">
 						<div class="user-header">
-							<div class="avatar avatar-sm"> <img src='<c:url value="/assets/customer/assets/img/profiles/avatar-01.jpg"></c:url>' alt="User Image" class="avatar-img rounded-circle"> </div>
+                                                    <div class="avatar avatar-sm"> <img src='<c:url value="${(sessionScope.user.avatar == null)?'/images/defaultUser.jpg':sessionScope.user.avatar}"></c:url>' alt="User Image" class="avatar-img rounded-circle"> </div>
 							<div class="user-text">
-								<h6>Soeng Souy</h6>
-								<p class="text-muted mb-0">Administrator</p>
+                                                            <h6>${sessionScope.user.fullname}</h6>
+                                                                <p class="text-muted mb-0">${sessionScope.user.roleModel.name}</p>
 							</div>
-						</div> <a class="dropdown-item" href="profile.html">My Profile</a> <a class="dropdown-item" href="settings.html">Account Settings</a> <a class="dropdown-item" href="login.html">Logout</a> </div>
+						</div> 
+                                                <a class="dropdown-item" href="/BookingHotel_Prj301/views/customer/CustomerProfile.jsp">My Profile</a> 
+                                                <a class="dropdown-item" href='<c:url value="/logout"></c:url>'>Logout</a> </div>
 				</li>
 			</ul>
 		</div>
@@ -128,17 +68,19 @@
 			<div class="sidebar-inner slimscroll">
 				<div id="sidebar-menu" class="sidebar-menu">
 					<ul>
-						<li class="active"> <a href='<c:url value="/HomeCustomerController?fetch=6&page=1"></c:url>'><i class="fas fa-tachometer-alt"></i> <span>Home</span></a> </li>
+						<li class="active"> <a href='<c:url value="/HomeCustomerController?action=roomHome&fetch=6&page=1"></c:url>'><i class="fas fa-tachometer-alt"></i> <span>Home</span></a> </li>
 						<li class="list-divider"></li>
 						<li class="submenu"> <a href="#"><i class="fas fa-suitcase"></i> <span> Booking </span> <span class="menu-arrow"></span></a>
 							<ul class="submenu_class" style="display: none;">
-								<li><a href="all-booking.html">Pending Booking</a></li>
-								<li><a href="edit-booking.html">Denied Booking</a></li>
-								<li><a href="add-booking.html">Completed Booking</a></li>
+                                                                <li><a href='<c:url value="/BookingController?action=paymentBooking&fetch=6&page=1"></c:url>'>Pending Payment</a></li>
+								<li><a href='<c:url value="/BookingController?action=pendingBooking&fetch=6&page=1"></c:url>'>Pending Booking</a></li>
+                                                                <li><a href='<c:url value="/BookingController?action=alreadyBooking&fetch=6&page=1"></c:url>'>Already Booking</a></li>
+								<li><a href='<c:url value="/BookingController?action=cancelBooking&fetch=6&page=1"></c:url>'>Denied Booking</a></li>
+								<li><a href='<c:url value="/BookingController?action=completedBooking&fetch=6&page=1"></c:url>'>Completed Booking</a></li>
 							</ul>
 						</li>
-						<li class=""> <a href="#"><i class="fas fa-user"></i> <span> Favourite List </span></a></li>
-                        <li class=""> <a href="invoices.html"><i class="fas fa-user"></i> <span> Invoices</span></a></li>
+						<li class=""> <a href='<c:url value="/FavouriteRoomsController?fetch=6&page=1"></c:url>'><i class="fas fa-heart"></i> <span> Favourite List </span></a></li>
+                                        <li class=""> <a href='<c:url value="/invoice"></c:url>'><i class="fas fa-user"></i> <span> Invoices</span></a></li>
                         <li class=""> <a href="payments.html"><i class="fas fa-user"></i> <span> Payments</span></a></li>
                         <li> <a href='<c:url value="/views/customer/Calendar.jsp"></c:url>'><i class="fas fa-calendar-alt"></i> <span>Calendar</span></a> </li>
 						<li class="submenu"> <a href="#"><i class="fe fe-table"></i> <span> Reports </span> <span class="menu-arrow"></span></a>
@@ -156,38 +98,41 @@
 
             <!-- display room list -->
             <div class="container-fluid blog py-5">
+                <!--<!-- Alert -->
+                    <c:if test= "${not empty alert}">
+                        <div class="alert alert-${alert}" role="alert">
+                            ${msg}
+                        </div>
+                    </c:if>
                 <!-- Search in right content -->
             <div class="row" style="margin-left: 0;">
+                <h5 id="errorText" style="color: red"></h5>
                 <div class="col-lg-12">
-                    <form>
+                    <form id="searchForm" action="SearchedRoom" method="Post">
                         <div class="row formtype">
                             <div class="col-md-3">
                                 <div class="form-group">
                                     <label>Address</label>
-                                    <input type="text" class="form-control" min="0">
+                                    <input type="text" name="address" value="${address}" class="form-control" required="">
                                 </div>
                             </div>
-							<div class="col-md-2">
+							<div class="col-md-3">
                                 <div class="form-group">
                                     <label>Min Price</label>
-									<input type="number" class="form-control" min="0">
+                                    <input type="text"  id="minPrice" name="minPrice" value="${minPrice}"  pattern="\d+(\.\d+)?" class="form-control" min="0" required="">
                                 </div>
                             </div>
-							<div class="col-md-2">
+							<div class="col-md-3">
                                 <div class="form-group">
                                     <label>Max Price</label>
-									<input type="number" class="form-control" min="0">
+                                    <input type="text" id="maxPrice" name="maxPrice" value="${maxPrice}"   pattern="\d+(\.\d+)?" class="form-control" min="0" required=""> 
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <label>From</label>
-                                    <input type="date" class="form-control"> 
+                                    <label>Search</label>
+                                    <button type="button" onclick="checkSearchForm()" class="btn btn-success btn-block mt-0 search_button"> Search </button> 
                                 </div>
-                            </div>
-                            <div class="col-md-2">
-                                <div class="form-group">
-                                    <label> Search</label> <a href="#" class="btn btn-success btn-block mt-0 search_button"> Search </a> </div>
                             </div>
                         </div>
                     </form>
@@ -201,10 +146,11 @@
                             <div class="blog-item">
                                 <div class="blog-img">
                                     <div class="blog-img-inner">
+                                        <!-- comment -->
                                         <c:if test="${room.avatar != null}">
-                                            <img class="img-fluid w-100 rounded-top" src='<c:url value="${room.avatar}"></c:url>' alt="Image">
+                                            <img class="img-fluid w-100 rounded-top" src='<c:url value="images/supplier/${room.avatar}"></c:url>' alt="Image">
                                         </c:if>
-                                         <c:if test="${room.avatar == null}">
+                                        <c:if test="${room.avatar == null}">
                                             <img class="img-fluid w-100 rounded-top" src='<c:url value="images/blog-1.jpg"></c:url>' alt="Image">
                                         </c:if>
                                         <div class="blog-icon">
@@ -217,12 +163,55 @@
                                 </div>
                                 <div class="blog-content border border-top-0 rounded-bottom p-4">
                                     <p class="mb-3">${room.roomTypeModel.roomType}</p>
-                                    <a href="#" class="h4" style="color: #009688;">${room.money}vnd</a>
+                                    <a href="#" class="h4" style="color: #009688;">${room.getFormatedPrice()}</a>
                                     <p class="my-3"></p>
-				    <p class="mb-3">${room.hotelModel.address}</p>
-                                    <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Read More</a>
-                                    <a href="#" class="btn btn-primary rounded-pill py-2 px-4">Booking Now</a>
+				  				    <p class="mb-3">${room.hotelModel.address}</p>
+                                                                         <form action="HomeCustomerController" method="post">
+                                                                                <input type="hidden" name="action" value="detailRoom">
+                                                                                <input type="hidden" name="roomNo" value="${room.roomNo}">
+										<button class="btn btn-primary py-2 px-4" style="width: 100%" type="submit">Booking Now</button>
+									</form>
                                 </div>
+                                                                                 <!-- Button trigger modal -->
+                                                                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#reportModal">
+                                                                                        Report
+                                                                                    </button>
+
+                                                                                    <!-- Modal -->
+                                                                                    <div class="modal fade" id="reportModal" tabindex="-1" role="dialog" aria-labelledby="reportModalLabel" aria-hidden="true" style="z-index: ">
+                                                                                        <div class="modal-dialog" role="document">
+                                                                                            <div class="modal-content">
+                                                                                                <div class="modal-header">
+                                                                                                    <h5 class="modal-title" id="reportModalLabel">Report</h5>
+                                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                                                        <span aria-hidden="true">×</span>
+                                                                                                    </button>
+                                                                                                </div>
+                                                                                                <div class="modal-body">
+                                                                                                    <form id="reportForm" action="report" method="get">
+                                                                                                        <div class="form-group">
+                                                                                                            <input type="hidden" name="roomid" value="${room.roomNo}" >
+                                                                                                            <label for="report-reason">Reason for reporting:</label>
+                                                                                                            <textarea class="form-control" id="report-reason" rows="3" name="report" required=""></textarea>
+                                                                                                        </div>
+                                                                                                         <div class="modal-footer">
+                                                                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                                                            <button type="submit" class="btn btn-primary">Submit Report</button>
+                                                                                                        </div>
+                                                                                                    </form>
+                                                                                                </div>
+                                                                                                
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <script>
+                                                                                      document.getElementById("reportForm").addEventListener("submit", function() {
+                                                                                          // Lấy thời gian hiện tại dưới dạng số milis giây
+                                                                                          var currentTimeMillis = Date.now();
+                                                                                          // Đặt giá trị thời gian vào trường ẩn
+                                                                                          document.getElementById("timestamp").value = currentTimeMillis;
+                                                                                      });
+                                                                                  </script>
                             </div>
                         </div>
                     </c:forEach>
@@ -243,73 +232,102 @@
 		</div>
 	</div>
    <script>   
-              var open = true;
-              function openOrCloseSidebar(){
-                  if(open){
-                      document.getElementById("bodyTag").classList.add("mini-sidebar");
-                      open = false;
-                  }else{
-                      document.getElementById("bodyTag").classList.remove("mini-sidebar");
-                      open = true;
-                  }
-              }
-              
-	       var url = "/BookingHotel_Prj301/HomeCustomerController?fetch=6&page=";  
-		   var paging = document.getElementById("paging");
-
-		   for(let i = 1; i <= ${totalPage}; i++){
-			    
-			    if(i === 1){
-					var liTag = document.createElement("li");
-					var aTag = document.createElement("a");
-					var text  = document.createTextNode("Previous");
-					liTag.classList.add("page-item");
-					aTag.classList.add("page-link");
-					if(${page} === 1){
-						aTag.href=(url+${page});
-					}else{
-						aTag.href=(url+(${page-1}));
-					}
-					aTag.appendChild(text);
-					liTag.appendChild(aTag);
-					paging.appendChild(liTag);
-				}
-
-                var liTag = document.createElement("li");
-                var aTag = document.createElement("a");
-                var text  = document.createTextNode(i);
-                liTag.classList.add("page-item");
-                aTag.classList.add("page-link");
-                aTag.href=(url+i);
-                aTag.appendChild(text);
-                liTag.appendChild(aTag);
-                paging.appendChild(liTag);
-
-				if(${page} === i){
-                  liTag.classList.add("active");
-                }    
-
-				if(i === ${totalPage}){
-					var liTag = document.createElement("li");
-					var aTag = document.createElement("a");
-					var text  = document.createTextNode("Next");
-					liTag.classList.add("page-item");
-					aTag.classList.add("page-link");
-					if(${page} === ${totalPage}){
-						aTag.href=(url+${totalPage});
-					}else{
-						aTag.href=(url+${page+1});
-					}
-					aTag.appendChild(text);
-					liTag.appendChild(aTag);
-					paging.appendChild(liTag);
-				}
-         
+        var open = true;
+        function openOrCloseSidebar(){
+            if(open){
+                document.getElementById("bodyTag").classList.add("mini-sidebar");
+                open = false;
+            }else{
+                document.getElementById("bodyTag").classList.remove("mini-sidebar");
+                open = true;
             }
+        }
+               
+    var url="";
+    var paging = document.getElementById("paging");
+    
+    if(${not empty pagingUrl}){
+        url ="${pagingUrl}";  
+    }else{
+        url = "/BookingHotel_Prj301/HomeCustomerController?action=roomHome&fetch=6&page=";  
+    }
+    
+    for(let i = 1; i <= ${totalPage}; i++){
+        
+                        if(i === 1){
+            var liTag = document.createElement("li");
+            var aTag = document.createElement("a");
+            var text  = document.createTextNode("Previous");
+            liTag.classList.add("page-item");
+            aTag.classList.add("page-link");
+            if(${page} === 1){
+                aTag.href=(url+${page});
+            }else{
+                aTag.href=(url+(${page-1}));
+            }
+            aTag.appendChild(text);
+            liTag.appendChild(aTag);
+            paging.appendChild(liTag);
+        }
 
-   </script>
-	<script data-cfasync="false" src="../../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
-	<script src='<c:url value="/assets/customer/assets/js/jquery-3.5.1.min.js"></c:url>'></script>
+        var liTag = document.createElement("li");
+        var aTag = document.createElement("a");
+        var text  = document.createTextNode(i);
+        liTag.classList.add("page-item");
+        aTag.classList.add("page-link");
+        aTag.href=(url+i);
+        aTag.appendChild(text);
+        liTag.appendChild(aTag);
+        paging.appendChild(liTag);
+
+            if(${page} === i){
+            liTag.classList.add("active");
+        }    
+
+        if(i === ${totalPage}){
+            var liTag = document.createElement("li");
+            var aTag = document.createElement("a");
+            var text  = document.createTextNode("Next");
+            liTag.classList.add("page-item");
+            aTag.classList.add("page-link");
+            if(${page} === ${totalPage}){
+                aTag.href=(url+${totalPage});
+            }else{
+                aTag.href=(url+${page+1});
+            }
+            aTag.appendChild(text);
+            liTag.appendChild(aTag);
+            paging.appendChild(liTag);
+        }
+    
+    }
+    
+    function checkSearchForm() {
+    var minPrice = document.getElementById("minPrice").value;
+    var maxPrice = document.getElementById("maxPrice").value;
+
+    // Convert minPrice and maxPrice to numbers for comparison
+    minPrice = parseFloat(minPrice);
+    maxPrice = parseFloat(maxPrice);
+
+    if (isNaN(minPrice) || isNaN(maxPrice)) {
+        document.getElementById("errorText").innerText = "Please enter valid prices.";
+        return;
+    }
+
+    if (minPrice >= maxPrice) {
+        document.getElementById("errorText").innerText = "Min price must be lower than max price";
+        return;
+    }
+
+    // If validation passes, submit the form
+    document.getElementById("searchForm").submit();
+}
+    
+    
+
+   </script>	
+        <script src='<c:url value="/assets/customer/assets/js/jquery-3.5.1.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/popper.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/bootstrap.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/plugins/slimscroll/jquery.slimscroll.min.js"></c:url>'></script>
@@ -317,15 +335,15 @@
 	<script src='<c:url value="/assets/customer/assets/plugins/morris/morris.min.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/chart.morris.js"></c:url>'></script>
 	<script src='<c:url value="/assets/customer/assets/js/script.js"></c:url>'></script>
-    <!-- JavaScript Libraries -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src='<c:url value="/assets/customer/lib/easing/easing.min.js"></c:url>'></script>
-    <script src='<c:url value="/assets/customer/lib/waypoints/waypoints.min.js"></c:url>'></script>
-    <script src='<c:url value="/assets/customer/lib/owlcarousel/owl.carousel.min.js"></c:url>'></script>
-    <script src='<c:url value="/assets/customer/lib/lightbox/js/lightbox.min.js"></c:url>'></script>
-    <!-- Template Javascript -->
-    <script src='<c:url value="/assets/customer/js/main.js"></c:url>'></script>
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src='<c:url value="/assets/customer/lib/easing/easing.min.js"></c:url>'></script>
+        <script src='<c:url value="/assets/customer/lib/waypoints/waypoints.min.js"></c:url>'></script>
+        <script src='<c:url value="/assets/customer/lib/owlcarousel/owl.carousel.min.js"></c:url>'></script>
+        <script src='<c:url value="/assets/customer/lib/lightbox/js/lightbox.min.js"></c:url>'></script>
+        <!-- Template Javascript -->
+        <script src='<c:url value="/assets/customer/js/main.js"></c:url>'></script>
 </body>
 
 </html>

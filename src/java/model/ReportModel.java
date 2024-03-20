@@ -25,6 +25,13 @@ public class ReportModel {
         this.createdDate = createdDate;
         this.content = content;
     }
+    
+    public ReportModel( CustomerModel customerModel, RoomModel roomModel, Timestamp createdDate, String content) {
+        this.customerModel = customerModel;
+        this.roomModel = roomModel;
+        this.createdDate = createdDate;
+        this.content = content;
+    }
 
     public long getId() {
         return id;

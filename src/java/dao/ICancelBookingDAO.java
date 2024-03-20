@@ -4,6 +4,8 @@
  */
 package dao;
 
+import java.sql.Timestamp;
+import java.util.List;
 import model.CancelBookingModel;
 
 /**
@@ -12,4 +14,7 @@ import model.CancelBookingModel;
  */
 public interface ICancelBookingDAO{
     CancelBookingModel findBy (long id);
+    Integer countCancelBooking(long customerId);
+    List<CancelBookingModel> findCancelBooking(long customerId, int offset, int fetch);
+    void insert(long cusId, long bookingId, String content, Timestamp createdDate, short status);
 }

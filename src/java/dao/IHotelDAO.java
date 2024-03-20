@@ -13,4 +13,6 @@ import model.HotelModel;
 public interface IHotelDAO {
     HotelModel findBy(long hotelId);
     HotelModel getHotel(long hotelId);
+    HotelModel getHotelBy(long supplierId);
+     Long insertHotel( String name, String address, String postcode, int numRoom, String phone, Double starRating );
 }

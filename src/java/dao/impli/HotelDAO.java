@@ -41,5 +41,22 @@ public class HotelDAO extends AbstractModel implements IHotelDAO {
         HotelDAO hotel = new HotelDAO();
         System.out.println(hotel.findBy(1));
     }
+    
+    @Override
+    public HotelModel getHotelBy(long supplierId) {
+        String sql = "SELECT *\n"
+                + "FROM Hotel\n"
+                + "WHERE id IN (SELECT hotelId FROM Supplier WHERE id = ?)";
+        List<HotelModel> list = query(sql, new HotelMapping(), supplierId);
+        return (list.isEmpty()) ? null : list.get(0);
+    }
+    
+     @Override
+    public Long insertHotel(String name, String address, String postcode, int numRoom, String phone, Double starRating) {
+        String sql = "INSERT INTO Hotel( name, address, postcode, numRooms, phone, starRating)" 
+                + "VALUES (?,? ,?, ?,?,?)";
+        return insert(sql, name, address, postcode, numRoom, phone, starRating);
+    }
+    
 
 }

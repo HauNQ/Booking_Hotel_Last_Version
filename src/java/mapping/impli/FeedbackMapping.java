@@ -34,6 +34,7 @@ public class FeedbackMapping implements IRowMapping<FeedbackModel> {
             feedbackModel.setRoomModel(roomDAO.findBy(rs.getLong("roomNo")));
             feedbackModel.setCreatedDate(rs.getTimestamp("createdDate"));
             feedbackModel.setContent(rs.getString("content"));
+            feedbackModel.setStatus(rs.getShort("status"));
         } catch (SQLException ex) {
             Logger.getLogger(FeedbackMapping.class.getName()).log(Level.SEVERE, null, ex);
             feedbackModel = null;

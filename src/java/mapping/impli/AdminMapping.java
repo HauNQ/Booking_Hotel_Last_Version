@@ -38,6 +38,8 @@ public class AdminMapping implements IRowMapping<AdminModel>{
             adminModel.setModifiedDate(rs.getTimestamp("modifiedDate"));
             adminModel.setCreatedDate(rs.getTimestamp("createdDate"));
             adminModel.setAvatar(rs.getString("avatar"));
+            adminModel.setCapcha(rs.getString("capcha"));
+            adminModel.setValidCapchaTime(rs.getTimestamp("validCapchaTime"));
 
         } catch (SQLException ex) {
             Logger.getLogger(AdminMapping.class.getName()).log(Level.SEVERE, null, ex);
